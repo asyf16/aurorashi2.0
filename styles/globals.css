@@ -55,13 +55,17 @@
     font-family: 'serif', normal;
     font-weight: bold;
 }
+
 @layer base {
+    body {
+        @apply text-[#eae5dfff];
+    }
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-3xl font-bold tracking-tight sm:text-5xl;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply sm:text-3xl font-bold text-lg italic text-[#d1c8ffff] font-serif;
     }
 
     h3 {
@@ -69,6 +73,36 @@
     }
 
     a:not(.btn) {
-        @apply underline transition hover:opacity-80;
+        @apply transition hover:opacity-80;
     }
 }
+
+@keyframes wiggle {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(0deg);
+      }
+    35% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+    65% {
+      transform: rotate(-8deg);
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  
+
+  html {
+    scroll-behavior: smooth;
+  }
