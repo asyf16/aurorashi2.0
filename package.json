@@ -10,8 +10,10 @@
     },
     "dependencies": {
         "@netlify/blobs": "^8.1.2",
+        "@rive-app/react-canvas": "^4.18.7",
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
+        "lucide-react": "^0.487.0",
         "markdown-to-jsx": "^7.4.5",
         "next": "15.2.4",
         "react": "18.3.1",

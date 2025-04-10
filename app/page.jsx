@@ -1,67 +1,41 @@
-import Link from 'next/link';
-import { Card } from 'components/card';
-import { ContextAlert } from 'components/context-alert';
-import { Markdown } from 'components/markdown';
-import { RandomQuote } from 'components/random-quote';
-import { getNetlifyContext } from 'utils';
-
-const contextExplainer = `
-The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
-([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
-`;
-
-const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
-`;
-
-const postDynamicContentExplainer = `
-On Netlify, Next.js Route Handlers are automatically deployed as [Serverless Functions](https://docs.netlify.com/functions/overview/).
-Alternatively, you can add Serverless Functions to any site regardless of framework, with acccess to the [full context data](https://docs.netlify.com/functions/api/).
-
-And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
-`;
-
-const ctx = getNetlifyContext();
+'use client';
+import { FastForward } from 'lucide-react';
+import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 
 export default function Page() {
-    return (
-        <div className="flex flex-col gap-12 sm:gap-16">
-            <section>
-                <ContextAlert className="mb-6" />
-                <h1 className="mb-4">Netlify Platform Starter - Next.js</h1>
-                <p className="mb-6 text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link href="https://docs.netlify.com/frameworks/next-js/overview/" className="btn btn-lg sm:min-w-64">
-                    Read the Docs
-                </Link>
-            </section>
-            {!!ctx && (
-                <section className="flex flex-col gap-4">
-                    <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
-                </section>
-            )}
-            <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-                <Markdown content={postDynamicContentExplainer} />
-            </section>
-        </div>
-    );
-}
+    const { RiveComponent } = useRive({
+        src: '/images/space.riv',
+        stateMachines: 'State Machine 1',
+        autoplay: true,
+        artboard: 'Artboard',
+        layout: new Layout({
+            fit: Fit.Fill,
+            alignment: Alignment.TopCenter
+        })
+    });
 
-function RuntimeContextCard() {
-    const title = `Netlify Context: running in ${ctx} mode.`;
-    if (ctx === 'dev') {
-        return (
-            <Card title={title}>
-                <p>Next.js will rebuild any page you navigate to, including static pages.</p>
-            </Card>
-        );
-    } else {
-        return (
-            <Card title={title}>
-                <p>This page was statically-generated at build time.</p>
-            </Card>
-        );
-    }
+    return (
+        <>
+            <div className="h-screen w-screen bg-[#04020e]">
+                <RiveComponent />
+            </div>
+            <div className="h-screen w-screen absolute flex flex-col absolute top-0 justify-center items-center text-[#e6e6e6]">
+                <div className="font-serif italic sm:text-[20px] text-[14px] mb-4">Artist · Designer · Developer</div>
+                <div className="flex flex-col items-center font-heading sm:text-[90px] md:text-[110px] text-[50px] leading-[50px] md:leading-[110px] sm:leading-[90px]">
+                    <div className="text-[#e6e6e670]">AURORA Shi</div>
+                    <div className="group flex flex-row items-center justify-center">
+                        <div className="sm:text-[100px] md:text-[130px] text-[60px] sm:group-hover:translate-x-[-50px] transition-translate duration-300">
+                            AURORA Shi
+                        </div>
+                        <div className="group hidden group-hover:flex duration-300 translate-x-[-30px] translate-y-[10px]">
+                            <FastForward className="w-[80px] h-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                    </div>
+                    <div className="text-[#e6e6e670]">AURORA Shi</div>
+                </div>
+                <div className="font-serif italic sm:text-[20px] text-[14px] mt-6">Software Engineering Student</div>
+                <div className="font-serif italic sm:text-[20px] text-[14px]">University of Waterloo</div>
+            </div>
+        </>
+    );
 }
