@@ -10,10 +10,20 @@ export default function Navbar() {
                 <a href="#about">
                     <div className=" hover:text-[#d1c8ffff] hover:italic cursor-pointer">About</div>
                 </a>
-                <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Experience</div>
-                <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Projects</div>
-                <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Portfolio</div>
-                <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Click</div>
+                <a href="#experience">
+                    <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Experience</div>
+                </a>
+                <a href="#projects">
+                    <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Projects</div>
+                </a>
+
+                <a href="#portfolio">
+                    <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Portfolio</div>
+                </a>
+
+                <a href="#about">
+                    <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Click</div>
+                </a>
             </div>
             <a
                 href="#home"

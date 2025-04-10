@@ -71,10 +71,6 @@
     h3 {
         @apply text-xl font-bold;
     }
-
-    a:not(.btn) {
-        @apply transition hover:opacity-80;
-    }
 }
 
 @keyframes wiggle {
