@@ -9,7 +9,7 @@ export default function AwardCard({ image, title, year, description }) {
             </div>
 
             <div className="w-[150px] sm:w-[190px] pl-4 pr-3 flex flex-col">
-                <h3 className="sm:text-md text-sm font-serif italic">{title}</h3>
+                <h3 className="sm:text-md text-sm font-serif italic font-bold">{title}</h3>
                 <div className="w-full">
                     <p className="sm:text-sm text-xs text-white">
                         {year} - {description}

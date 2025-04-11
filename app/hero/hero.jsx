@@ -38,8 +38,8 @@ export default function Hero() {
                 <div className="font-serif italic sm:text-[20px] text-[14px] mt-6">Software Engineering Student</div>
                 <div className="font-serif italic sm:text-[20px] text-[14px]">University of Waterloo</div>
                 <div className="absolute bottom-6 right-6 flex flex-col justify-center items-center hover:text-[#d1c8ffff]">
-                    <SquareArrowDownRight className="sm:w-[50px] sm:h-[50px] h-[30px] w-[30px] animate-wiggle" />
-                    <div className="text-xs">Click me!</div>
+                    <SquareArrowDownRight className="sm:w-[65px] sm:h-[65px] h-[45px] w-[45px] animate-wiggle stroke-1" />
+                    <div className="sm:text-sm text-xs">Click me!</div>
                 </div>
             </div>
         </>
