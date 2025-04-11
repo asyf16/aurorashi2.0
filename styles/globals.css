@@ -1,123 +1,132 @@
 @import 'tailwindcss';
 
 @font-face {
-    font-family: 'textreg';
-    src: url('/fonts/Aspekta-200.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'textreg';
+  src: url('/fonts/Aspekta-200.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'textreg';
-    src: url('/fonts/Aspekta-600.otf') format('opentype'); 
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'textreg';
+  src: url('/fonts/Aspekta-600.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'headings';
-    src: url('/fonts/Slovic_Demo-Serif.otf') format('opentype'); 
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'headings';
+  src: url('/fonts/Slovic_Demo-Serif.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'serif';
-    src: url('/fonts/Spectral-Light.ttf') format('truetype'); 
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'serif';
+  src: url('/fonts/Spectral-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @theme {
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-neutral-950) 0%, transparent),
-            color-mix(in oklab, var(--color-neutral-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
-    --color-primary: #eae5dfff; 
-    --color-primary-content: #171717;
-    --color-secondary: #d1c8ffff; 
-    --font-sans: 'textreg', sans-serif;
+  --background-image-noise: linear-gradient(to bottom,
+      color-mix(in oklab, var(--color-neutral-950) 0%, transparent),
+      color-mix(in oklab, var(--color-neutral-950) 100%, transparent)),
+    url('/images/noise.png');
+  --color-primary: #eae5df;
+  --color-primary-content: #171717;
+  --color-secondary: #d1c8ff;
+  --font-sans: 'textreg', sans-serif;
 }
 
 .font-bold-text {
-    font-family: 'textreg', sans-serif;
-    font-weight: bold;
+  font-family: 'textreg', sans-serif;
+  font-weight: bold;
 }
 
 .font-heading {
-    font-family: 'headings', normal;
-    font-weight: bold;
+  font-family: 'headings', normal;
+  font-weight: bold;
 }
 
 .font-serif {
-    font-family: 'serif', normal;
-    font-weight: bold;
+  font-family: 'serif', normal;
+  font-weight: bold;
 }
 
 @layer base {
-    body {
-        @apply text-[#eae5dfff];
-    }
-    h1 {
-        @apply text-3xl font-bold tracking-tight sm:text-5xl;
-    }
+  body {
+    @apply text-[#eae5dfff];
+  }
 
-    h2 {
-        @apply sm:text-3xl font-bold text-lg italic text-[#d1c8ffff] font-serif;
-    }
+  h1 {
+    @apply text-3xl font-bold tracking-tight sm:text-5xl;
+  }
 
-    h3 {
-        @apply text-xl font-bold;
-    }
+  h2 {
+    @apply sm:text-3xl font-bold text-lg italic text-[#d1c8ffff] font-serif;
+  }
+
+  h3 {
+    @apply text-xl font-bold;
+  }
 }
 
 @keyframes wiggle {
-    0% {
-      transform: rotate(0deg);
-    }
-    20% {
-        transform: rotate(0deg);
-      }
-    35% {
-      transform: rotate(-8deg);
-    }
-    50% {
-      transform: rotate(8deg);
-    }
-    65% {
-      transform: rotate(-8deg);
-    }
-    80% {
-      transform: rotate(0deg);
-    }
-  }
-  
-  .animate-wiggle {
-    animation: wiggle 3s ease-in-out infinite;
-  }
-  
-
-  html {
-    scroll-behavior: smooth;
+  0% {
+    transform: rotate(0deg);
   }
 
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  20% {
+    transform: rotate(0deg);
   }
-  
-  .award-scroll-container {
-    display: flex;
-    gap: 8px;
+
+  35% {
+    transform: rotate(-8deg);
   }
-  
-  .animate-scroll {
-    animation: scrollLeft 20s linear infinite;
+
+  50% {
+    transform: rotate(8deg);
   }
-  
+
+  65% {
+    transform: rotate(-8deg);
+  }
+
+  80% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.award-scroll-container {
+  display: flex;
+  gap: 20px;
+}
+
+.animate-scroll {
+  animation: scrollLeft 20s linear infinite;
+}
+
+.glow-effect {
+  box-shadow: 0 0 15px rgba(121, 126, 229, 0.4);
+  transition: all 0.3s ease;
+}

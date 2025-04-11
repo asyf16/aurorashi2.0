@@ -18,27 +18,49 @@ export default function About() {
                     <h2 className="mb-2">About me</h2>
                     <div className="sm:text-lg text-sm mb-2">
                         Hi! My name is Aurora. I am a{' '}
-                        <span className="font-serif italic font-bold group relative">
-                            Software Engineering{' '}
-                            <div className="left-0 top-[20px] ml-4 hidden absolute group-hover:block">
+                        <span className="font-serif font-bold group relative">Software Engineering </span>{' '}
+                        student at the <span className="font-serif bold">University of Waterloo</span>,
+                        graduating 2028.
+                    </div>
+                    <div className="sm:block hidden sm:text-lg text-sm mb-2">
+                        In my spare time, I'm a painter,{' '}
+                        <span className="font-serif italic text-[#d1c8ffff] font-bold group relative">
+                            nail artist
+                            <div className="left-[20px] top-[90px] hidden absolute group-hover:block transform scale-350 transition-all duration-300 z-[999]">
                                 <Image
-                                    src="/images/Portrait.webp"
+                                    src="/images/nails.webp"
                                     alt="Software Engineering"
-                                    width={200}
+                                    width={300}
+                                    height={0}
+                                    className="rounded-lg"
+                                />
+                            </div>
+                        </span>{' '}, gym-goer, and{' '}
+                        <span className="font-serif italic text-[#d1c8ffff] font-bold group relative">
+                            fisher(wo)man
+                            <div className="left-[20px] top-[80px] hidden absolute group-hover:block transform scale-220 transition-all duration-300 z-[999]">
+                                <Image
+                                    src="/images/fish.webp"
+                                    alt="Software Engineering"
+                                    width={300}
+                                    height={0}
+                                    className="rounded-lg"
+                                />
+                            </div>
+                        </span>{' '}. I also love{' '}
+                        <span className="font-serif italic text-[#d1c8ffff] font-bold group relative">
+                            baking
+                            <div className="left-[20px] top-[105px] hidden absolute group-hover:block transform scale-550 transition-all duration-300 z-[999]">
+                                <Image
+                                    src="/images/cake.webp"
+                                    alt="Software Engineering"
+                                    width={300}
                                     height={0}
                                     className="rounded-lg"
                                 />
                             </div>
                         </span>{' '}
-                        student at the <span className="font-serif italic bold">University of Waterloo</span>,
-                        graduating 2028.
-                    </div>
-                    <div className="sm:block hidden sm:text-lg text-sm mb-2">
-                        In my spare time, I'm a <span className="font-serif italic font-bold">painter </span> ,{' '}
-                        <span className="font-serif italic bold">nail artist</span>, gym-goer, and{' '}
-                        <span className="font-serif italic bold">fisher(wo)man</span>. I also love{' '}
-                        <span className="font-serif italic bold">baking</span> and making creative struggle meals in the
-                        kitchen!
+                        and making creative struggle meals in the kitchen!
                     </div>
                     <div className="sm:hidden block sm:text-lg text-sm mb-2">
                         In my spare time, I'm a <span className="font-serif italic bold">painter</span>,{' '}

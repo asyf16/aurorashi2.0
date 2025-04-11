@@ -4,7 +4,7 @@ import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 
 export default function Hero() {
     const { RiveComponent } = useRive({
-        src: '/images/space.riv',
+        src: '/images/gifs/space.riv',
         stateMachines: 'State Machine 1',
         autoplay: true,
         artboard: 'Artboard',
