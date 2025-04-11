@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import Navbar from 'components/navbar';
-import About from './about/about';
 
 export const metadata = {
     title: {
@@ -16,7 +15,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className="antialiased bg-[#04020e]">
                 <Navbar />
-                <main className="grow">{children}</main>
+                <main>{children}</main>
             </body>
         </html>
     );

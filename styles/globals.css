@@ -102,3 +102,22 @@
   html {
     scroll-behavior: smooth;
   }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .award-scroll-container {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .animate-scroll {
+    animation: scrollLeft 20s linear infinite;
+  }
+  
