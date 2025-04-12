@@ -6,7 +6,7 @@ export default function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
     const [volume, setVolume] = useState(false);
     return (
-        <div className="z-[999] w-screen h-[60px] flex flex-row justify-center items-center fixed top-0 left-0 backdrop-blur-md text-[#e6e6e6] bg-[#14102ccc] shadow-lg">
+        <div className="z-[999] w-screen h-[60px] flex flex-row justify-center items-center fixed top-0 left-0 backdrop-blur-md text-[#e6e6e6] bg-[#14102c] shadow-lg">
             <div className="sm:flex hidden flex-row gap-6 text-[14px]">
                 <a href="#home">
                     <div className=" hover:text-[#d1c8ffff] hover:italic cursor-pointer">Home</div>

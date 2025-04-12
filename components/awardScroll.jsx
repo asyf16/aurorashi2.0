@@ -57,12 +57,12 @@ export default function AwardScroll() {
     ];
 
     return (
-        <>
+        <div className="mt-22 mb-26">
             <div className="sm:mx-18 mx-8">
                 <h2>Awards</h2>
                 <p>The awards I have received over the past few years showcase both my passions and skills.</p>
             </div>
-            <div className="overflow-x-hidden mb-18 mt-6 relative mx-4">
+            <div className="overflow-x-hidden mt-6 relative mx-4">
                 <div className="award-scroll-container flex gap-8 animate-scroll">
                     {AWARDS.concat(AWARDS).map(([title, year, description, image], index) => (
                         <AwardCard key={index} image={image} title={title} description={description} year={year} />
@@ -70,8 +70,7 @@ export default function AwardScroll() {
                 </div>
                 <div className="absolute left-0 top-0 sm:w-[130px] w-[80px] sm:h-[150px] h-[130px] bg-linear-to-r from-[#04020e] to-transparent"></div>
                 <div className="absolute right-0 top-0 sm:w-[130px] w-[80px] sm:h-[150px] h-[130px] bg-linear-to-r from-transparent to-[#04020e]"></div>
-
             </div>
-        </>
+        </div>
     );
 }

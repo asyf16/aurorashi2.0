@@ -66,16 +66,9 @@
   h2 {
     @apply sm:text-3xl font-bold text-lg italic text-[#d1c8ffff] font-serif;
   }
-
-  h3 {
-    @apply text-xl font-bold;
-  }
 }
 
 @keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
 
   20% {
     transform: rotate(0deg);
@@ -126,7 +119,14 @@ html {
   animation: scrollLeft 20s linear infinite;
 }
 
-.glow-effect {
-  box-shadow: 0 0 15px rgba(121, 126, 229, 0.4);
-  transition: all 0.3s ease;
+.glow-picture {
+  outline: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: linear-gradient(black, black) padding-box,
+    conic-gradient(from var(--angle, 0deg),
+      transparent,
+      rgb(89, 66, 153) 10%,
+      transparent 20%) border-box;
+  animation: glowMovement 3s linear infinite;
 }

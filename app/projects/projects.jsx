@@ -3,7 +3,7 @@ import Card from 'components/projectCard';
 
 export default function Projects() {
     return (
-        <div className="w-screen bg-[#04020e] flex flex-col items-center justify-center" id="projects" >
+        <div className="w-screen bg-[#04020e] flex flex-col items-center justify-center mb-16" id="projects" >
             <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
                     <Card
@@ -45,7 +45,7 @@ export default function Projects() {
                         description={
                             'Smart trashcan with a movable servo arm that automatically sorts your trash from recycling, powered by AI imaging. Second place overall winner at DeltaHacks X.'
                         }
-                        image="/Images/gif/Bin.gif"
+                        image="/Images/gifs/Bin.gif"
                         technologies={['MongoDB', 'Firebase', 'React', 'Python', 'Arduino', 'Google Vision API']}
                         link="https://www.youtube.com/watch?v=fziGIb2MTAk"
                         github="https://github.com/asyf16/Intellibin"
