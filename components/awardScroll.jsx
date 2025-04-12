@@ -57,7 +57,7 @@ export default function AwardScroll() {
     ];
 
     return (
-        <div className="mt-22 mb-26">
+        <div className="sm:mt-22 sm:mb-26 mt-16 mb-20" id="award">
             <div className="sm:mx-18 mx-8">
                 <h2>Awards</h2>
                 <p>The awards I have received over the past few years showcase both my passions and skills.</p>
