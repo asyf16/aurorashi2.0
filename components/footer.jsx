@@ -70,7 +70,7 @@ export default function Footer() {
                 />
             </div>
             <hr className="mb-2 border-t-1 border-gray-700" />
-            <p className="sm:text-sm text-xs text-gray-400 sm:text-lg text-xs">Made with love ♡ Aurora Shi © 2025</p>
+            <p className="sm:text-sm text-xs text-gray-400 sm:text-lg text-xs">Made with ♡ and monster | Aurora Shi © 2025</p>
             <div></div>
         </div>
     );

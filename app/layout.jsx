@@ -14,7 +14,6 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
             <body className="antialiased bg-[#04020e]">
-                <Navbar />
                 <main>{children}</main>
             </body>
         </html>

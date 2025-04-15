@@ -25,7 +25,7 @@ export default function Navbar() {
                     <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Portfolio</div>
                 </a>
 
-                <a href="#about">
+                <a href="/virtual">
                     <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">Click</div>
                 </a>
             </div>
