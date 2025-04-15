@@ -18,8 +18,8 @@ export default function About() {
                     <h2 className="mb-2">About me</h2>
                     <div className="sm:text-lg text-sm mb-2">
                         Hi! My name is Aurora. I am a{' '}
-                        <span className="font-serif font-bold group relative">Software Engineering </span>{' '}
-                        student at the <span className="font-serif bold">University of Waterloo</span>,
+                        <span className="font-serif font-bold group relative italic">Software Engineering </span>{' '}
+                        student at the <span className="font-serif bold italic">University of Waterloo</span>,
                         graduating 2028.
                     </div>
                     <div className="sm:block hidden sm:text-lg text-sm mb-2">

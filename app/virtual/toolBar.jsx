@@ -38,9 +38,9 @@ export default function ToolBar() {
                     <div>File</div>
                     <div>Edit</div>
                     <div>View</div>
-                    <div>Go</div>
-                    <div>Window</div>
-                    <div>Help</div>
+                    <div className="md:flex hidden">Go</div>
+                    <div className="md:flex hidden">Window</div>
+                    <div className="md:flex hidden">Help</div>
                 </div>
 
                 <div className="flex items-center space-x-3 mr-2">

@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import Navbar from 'components/navbar';
+import ContextProvider from '../components/contextProvider';
 
 export const metadata = {
     title: {
@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
             <body className="antialiased bg-[#04020e]">
-                <main>{children}</main>
+                <ContextProvider>
+                    <main>{children}</main>
+                </ContextProvider>
             </body>
         </html>
     );

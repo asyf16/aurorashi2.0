@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { Globe, Github } from 'lucide-react';
 
-export default function Card({ image, title, year, description, technologies, link, website, github }) {
+export default function ProjectCard({ image, title, year, description, technologies, link, website, github }) {
     const [angle, setAngle] = useState(0);
     const cardRef = useRef(null);
 

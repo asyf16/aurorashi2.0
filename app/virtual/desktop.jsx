@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { Home } from 'lucide-react';
 import ToolBar from './toolBar';
 import DesktopApp from './desktopApp';
 

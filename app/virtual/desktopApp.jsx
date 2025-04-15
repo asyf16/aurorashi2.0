@@ -1,12 +1,20 @@
 'use client';
 import { X } from 'lucide-react';
+import { useContext, useEffect } from 'react';
+import { Context } from '../../components/contextProvider';
+import { notesGetLS } from '../../components/contextProvider';
 
 export default function DesktopApp({ component, setComponent }) {
+    const { notes, setNotes } = useContext(Context);
     const handleClose = () => {
         if (typeof setComponent === 'function') {
             setComponent(null);
         }
     };
+
+    useEffect(() => {
+        setNotes(notesGetLS)
+    } , [])
     return (
         <div className="w-screen h-[calc(100vh-35px)] absolute top-[35px] left-0 flex justify-center">
             <div className="w-[80%] h-[83%] bg-white mt-8 z-[900] rounded-xl flex flex-col">
@@ -23,8 +31,8 @@ export default function DesktopApp({ component, setComponent }) {
                         <div className="bg-stone-100 h-full w-full rounded-b-xl text-stone-800 p-4 flex flex-col">
                             <div className="text-md font-bold">My Notes...</div>
                             <textarea
-                                // value={thoughts}
-                                // onChange={(e) => setThoughts(e.target.value)}
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value)}
                                 className="w-full flex-1 resize-none focus:outline-none"
                                 placeholder="Hi! Welcome to Aurora's portfolio! Jot down some of your thoughts here. Don't worry, it'll
                             stay!"

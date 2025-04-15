@@ -1,12 +1,12 @@
 'use client';
-import Card from 'components/projectCard';
+import ProjectCard from "../../components/projectCard";
 
 export default function Projects() {
     return (
         <div className="w-screen bg-[#04020e] flex flex-col items-center justify-center mb-16" >
             <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
-                    <Card
+                    <ProjectCard
                         year="2025"
                         title="CrowdFund"
                         description={
@@ -20,7 +20,7 @@ export default function Projects() {
                     />
                 </div>
                 <div className="sm:w-1/2 w-full">
-                    <Card
+                    <ProjectCard
                         year="2025"
                         title="Silent Forest"
                         description={
@@ -39,7 +39,7 @@ export default function Projects() {
 
             <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
-                    <Card
+                    <ProjectCard
                         year="2024"
                         title="Intellibin"
                         description={
@@ -53,7 +53,7 @@ export default function Projects() {
                     />
                 </div>
                 <div className="sm:w-1/2 w-full">
-                    <Card
+                    <ProjectCard
                         year="2024"
                         title="EyeDentify"
                         description={
@@ -72,7 +72,7 @@ export default function Projects() {
 
             <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
-                    <Card
+                    <ProjectCard
                         year="2025"
                         title="Caltrack"
                         description={
@@ -86,7 +86,7 @@ export default function Projects() {
                     />
                 </div>
                 <div className="sm:w-1/2 w-full">
-                    <Card
+                    <ProjectCard
                         year="2025"
                         title="EPSB Awards Calculator"
                         description={
