@@ -13,23 +13,21 @@ export default function DesktopApp({ component, setComponent }) {
     };
 
     useEffect(() => {
-        setNotes(notesGetLS)
-    } , [])
+        setNotes(notesGetLS);
+    }, []);
     return (
         <div className="w-screen h-[calc(100vh-35px)] absolute top-[35px] left-0 flex justify-center">
-            <div className="w-[80%] h-[83%] bg-white mt-8 z-[900] rounded-xl flex flex-col">
-                <div className="bg-gray-600 w-full h-[25px] rounded-t-xl flex items-center justify-end pr-2">
-                    <button
-                        className="bg-red-500 w-4 h-4 rounded-full flex items-center justify-center"
-                        onClick={handleClose}
-                    >
-                        <X />
-                    </button>
-                </div>
-                <div className="w-full h-[calc(100%-25px)]">
+            <div className="w-[80%] h-[83%] bg-white mt-8 z-[900] rounded-xl flex flex-col relative">
+                <button
+                    className="absolute top-2 left-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center"
+                    onClick={handleClose}
+                >
+                    <X />
+                </button>
+                <div className="w-full h-full">
                     {component === 'notes' ? (
-                        <div className="bg-stone-100 h-full w-full rounded-b-xl text-stone-800 p-4 flex flex-col">
-                            <div className="text-md font-bold">My Notes...</div>
+                        <div className="bg-stone-100 h-full w-full rounded-xl text-stone-800 p-6 pt-8 flex flex-col">
+                            <div className="text-md font-bold">Leave your notes here...</div>
                             <textarea
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value)}
@@ -37,6 +35,34 @@ export default function DesktopApp({ component, setComponent }) {
                                 placeholder="Hi! Welcome to Aurora's portfolio! Jot down some of your thoughts here. Don't worry, it'll
                             stay!"
                             />
+                        </div>
+                    ) : component === 'beli' ? (
+                        <div className="w-full h-full rounded-xl overflow-hidden">
+                            <iframe
+                                src="https://beliapp.co/app/asyf16"
+                                className="w-full h-full border-none"
+                                title="Beli Website"
+                            />
+                        </div>
+                    ) : component === 'instagram' ? (
+                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                            <iframe
+                                src="https://widget.tagembed.com/2165317"
+                                className="w-[95%] h-full border-none"
+                                title="Nailart Instagram"
+                            ></iframe>
+                        </div>
+                    ) : component === 'camera' ? (
+                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                            camera
+                        </div>
+                    ) : component === 'email' ? (
+                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                            email
+                        </div>
+                    ) : component === 'art' ? (
+                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                            art
                         </div>
                     ) : null}
                 </div>
