@@ -64,40 +64,40 @@ export default function Parallax() {
                 <Image
                     alt="Parallax"
                     src={'/images/parallax/bg.webp'}
-                    width={500}
-                    height={500}
+                    width={3000}
+                    height={1650}
                     className="h-full w-full absolute top-0 left-0 z-[500]"
                     id="hill1"
                 />
                 <Image
                     alt="Parallax"
                     src={'/images/parallax/ml.webp'}
-                    width={500}
-                    height={500}
+                    width={3000}
+                    height={1650}
                     className="h-full w-full absolute top-0 left-0 z-[501]"
                     id="hill2"
                 />
                 <Image
                     alt="Parallax"
                     src={'/images/parallax/mr.webp'}
-                    width={500}
-                    height={500}
+                    width={3000}
+                    height={1650}
                     className="h-full w-full absolute top-0 left-0 z-[502]"
                     id="hill3"
                 />
                 <Image
                     alt="Parallax"
                     src={'/images/parallax/fr.webp'}
-                    width={500}
-                    height={500}
+                    width={3000}
+                    height={1650}
                     className="h-full w-full absolute top-0 left-0 z-[503]"
                     id="hill4"
                 />
                 <Image
                     alt="Parallax"
                     src={'/images/parallax/bird.webp'}
-                    width={500}
-                    height={500}
+                    width={3000}
+                    height={1650}
                     className="h-full w-full absolute top-0 left-0 z-[504]"
                     id="bird"
                 />
@@ -105,8 +105,8 @@ export default function Parallax() {
                 <Image
                     alt="Parallax"
                     src={'/images/parallax/fg.webp'}
-                    width={500}
-                    height={500}
+                    width={3000}
+                    height={1650}
                     className="h-full w-full absolute top-0 left-0 z-[505]"
                 />
                 <h1 className="text-glow absolute text-white font-serif italic font-bold text-4xl sm:text-7xl font-bold z-[506]">Projects</h1>
