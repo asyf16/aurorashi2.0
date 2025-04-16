@@ -23,7 +23,7 @@ export default function About() {
                         graduating 2028.
                     </div>
                     <div className="sm:block hidden sm:text-lg text-sm mb-2">
-                        In my spare time, I'm a painter,{' '}
+                        In my spare time, I am a painter,{' '}
                         <span className="font-serif italic text-[#d1c8ffff] font-bold group relative">
                             nail artist
                             <div className="left-[20px] top-[90px] hidden absolute group-hover:block transform scale-350 transition-all duration-300 z-[999]">
@@ -63,7 +63,7 @@ export default function About() {
                         and making creative struggle meals in the kitchen!
                     </div>
                     <div className="sm:hidden block sm:text-lg text-sm mb-2">
-                        In my spare time, I'm a <span className="font-serif italic bold">painter</span>,{' '}
+                        In my spare time, I am a <span className="font-serif italic bold">painter</span>,{' '}
                         <span className="font-serif italic bold">nail artist</span>,{' '}
                         <span className="font-serif italic bold">fisher(wo)man</span>, and gym-goer. I also love{' '}
                         <span className="font-serif italic bold">baking</span>!

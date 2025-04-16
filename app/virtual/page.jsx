@@ -29,7 +29,7 @@ export default function Virtual() {
         return (
             <div className="w-screen h-screen flex px-4 items-center justify-center bg-[#f9f9f9] dark:bg-[#151515]">
                 <div className="flex items-center space-x-1 text-xl font-semibold">
-                    <span>Loading Aurora's Device</span>
+                    <span>Loading Aurora&apos;s Device</span>
                     <span className="animate-bounce">.</span>
                     <span className="animate-bounce [animation-delay:0.1s]">.</span>
                     <span className="animate-bounce [animation-delay:0.2s]">.</span>

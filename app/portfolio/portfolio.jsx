@@ -99,7 +99,7 @@ export default function Portfolio() {
       id="portfolio"
     >
       <div className="text-center">
-        <h2 className="mb-4 sm:text-3xl text-xl">Aurora's Museum</h2>
+        <h2 className="mb-4 sm:text-3xl text-xl">Aurora&apos;s Museum</h2>
         <div className="sm:w-[600px] w-[240px] sm:text-xl text-sm">
           I love experimenting in all types of media such as oil painting, acrylic, sculpture, block printing,
           and mixed media.
