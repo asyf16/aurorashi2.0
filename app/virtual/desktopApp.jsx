@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import { Context } from '../../components/contextProvider';
 import { notesGetLS } from '../../components/contextProvider';
 
-export default function DesktopApp({ component, setComponent }) {
+export default function DesktopApp({ component, setComponent, isPhone }) {
     const { notes, setNotes } = useContext(Context);
     const handleClose = () => {
         if (typeof setComponent === 'function') {

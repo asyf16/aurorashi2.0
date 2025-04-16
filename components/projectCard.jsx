@@ -1,43 +1,20 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { Globe, Github } from 'lucide-react';
 
 export default function ProjectCard({ image, title, year, description, technologies, link, website, github }) {
-    const [angle, setAngle] = useState(0);
-    const cardRef = useRef(null);
-
-    useEffect(() => {
-        const glowingPicture = cardRef.current?.querySelector('.glow-picture');
-        let animationFrameId;
-
-        const updateAngle = () => {
-            setAngle(prevAngle => {
-                const newAngle = (prevAngle + 1) % 360;
-                if (glowingPicture) {
-                    glowingPicture.style.setProperty('--angle', `${newAngle}deg`);
-                }
-                return newAngle;
-            });
-            animationFrameId = requestAnimationFrame(updateAngle);
-        };
-
-        animationFrameId = requestAnimationFrame(updateAngle);
-
-        return () => {
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-            }
-        };
-    }, []);
-
     return (
-        <div ref={cardRef} className="bg-black text-white rounded-lg shadow-lg w-full">
+        <div className="bg-black text-white rounded-lg shadow-lg w-full">
             <a href={link} target="_blank" rel="noopener noreferrer">
-                <div className="relative w-full h-0 pb-[57%] glow-picture rounded-xl">
-                    <Image src={image} alt="Project Image" layout="fill" objectFit="cover" className="rounded-xl" />
-                </div>
+                <button className="relative w-full inline-flex overflow-hidden rounded-xl p-[1px] focus:outline-none">
+                    <span className={`absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#04020e_0%,#04020e_50%,#477bc9_100%)]`} />
+
+                    <div className="relative w-full h-0 pb-[57%] rounded-xl">
+                        <Image src={image} alt="Project Image" layout="fill" objectFit="cover" className="rounded-xl" />
+                    </div>
+                </button>
             </a>
+
             <div className="mt-4 flex flex-row justify-between items-center">
                 <div className="flex flex-row gap-2 items-center">
                     <h2 className="sm:text-xl text-lg font-bold">{title}</h2>

@@ -14,7 +14,7 @@ const ArtItem = ({ item, index }) => (
       height={parseInt(item[2], 10) || 500}
       className="border-16 border-black shadow-xl transform hover:scale-105 transition-all duration-500 ease-in-out sm:w-auto w-[75%]"
     />
-    <div className="flex-flex-col text-center bg-conic-180 from-gray-100 via-gray-400 to-gray-100 rounded-lg text-black sm:mt-6 mt-4 sm:px-6 px-3 sm:py-2 py-1">
+    <div className="flex-flex-col text-center bg-linear-to-t from-gray-300 to-gray-100 rounded-lg text-black sm:mt-6 mt-4 sm:px-6 px-3 sm:py-2 py-1">
       <p className="font-serif italic font-bold sm:text-xl text-sm">{item[3]}</p>
       <p className="sm:text-md text-xs">{item[4]}</p>
     </div>

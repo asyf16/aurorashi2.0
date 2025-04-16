@@ -50,6 +50,7 @@ export default function Projects() {
                         link="https://www.youtube.com/watch?v=fziGIb2MTAk"
                         github="https://github.com/asyf16/Intellibin"
                         website="https://devpost.com/software/intellibin-4qu7co"
+                        color="#6d3fd1"
                     />
                 </div>
                 <div className="sm:w-1/2 w-full">
@@ -96,6 +97,7 @@ export default function Projects() {
                         technologies={['Python', 'Tkinter', 'Pandas']}
                         link="https://github.com/asyf16/Average-Calculator"
                         github="https://github.com/asyf16/Average-Calculator"
+                        color="#c9a734"
                     />
                 </div>
             </div>

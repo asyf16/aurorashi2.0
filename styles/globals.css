@@ -124,15 +124,3 @@ html {
 .animate-scroll {
   animation: scrollLeft 20s linear infinite;
 }
-
-.glow-picture {
-  outline: none;
-  border: 2px solid transparent;
-  cursor: pointer;
-  background: linear-gradient(black, black) padding-box,
-    conic-gradient(from var(--angle, 0deg),
-      transparent,
-      rgb(89, 66, 153) 10%,
-      transparent 20%) border-box;
-  animation: glowMovement 3s linear infinite;
-}
