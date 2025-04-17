@@ -1,34 +1,8 @@
-'use client';
-import { useState, useEffect } from 'react';
 import { Wifi, BatteryFull, Bluetooth, EllipsisVertical, Search, AppleIcon } from 'lucide-react';
+import { useTime } from 'hooks/useTime';
 
 export default function ToolBar() {
-    const [currentTime, setCurrentTime] = useState('');
-    const [currentDate, setCurrentDate] = useState('');
-
-    useEffect(() => {
-        const updateTime = () => {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-            });
-
-            const dateString = now.toLocaleDateString('en-US', {
-                weekday: 'short',
-                month: 'short',
-                day: 'numeric'
-            });
-
-            setCurrentTime(timeString);
-            setCurrentDate(dateString);
-        };
-
-        updateTime();
-        const timeInterval = setInterval(updateTime, 1000);
-        return () => clearInterval(timeInterval);
-    }, []);
+    const {currentTime, currentDate} = useTime()
 
     return (
             <div className="w-screen h-[35px] absolute top-0 left-0 bg-[#171f2bB3] backdrop-blur-md flex justify-between items-center px-2 text-white text-sm">

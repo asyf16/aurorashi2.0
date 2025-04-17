@@ -1,10 +1,10 @@
 'use client';
-import { X } from 'lucide-react';
+import { Undo2, X } from 'lucide-react';
 import { useContext, useEffect } from 'react';
 import { Context } from '../../components/contextProvider';
 import { notesGetLS } from '../../components/contextProvider';
 
-export default function DesktopApp({ component, setComponent, isPhone }) {
+export default function App({ component, setComponent, isPhone }) {
     const { notes, setNotes } = useContext(Context);
     const handleClose = () => {
         if (typeof setComponent === 'function') {
@@ -16,17 +16,21 @@ export default function DesktopApp({ component, setComponent, isPhone }) {
         setNotes(notesGetLS);
     }, []);
     return (
-        <div className="w-screen h-[calc(100vh-35px)] absolute top-[35px] left-0 flex justify-center">
-            <div className="w-[80%] h-[83%] bg-white mt-8 z-[900] rounded-xl flex flex-col relative">
-                <button
-                    className="absolute top-2 left-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center"
-                    onClick={handleClose}
-                >
-                    <X />
-                </button>
-                <div className="w-full h-full">
+        <div
+            className={`w-screen absolute left-0 flex justify-center ${
+                !isPhone ? 'h-[calc(100vh-35px)] top-[35px]' : 'h-screen top-0'
+            }`}
+        >
+            <div
+                className={`flex flex-col relative ${
+                    !isPhone
+                        ? 'w-[80%] h-[83%] mt-8 rounded-xl bg-white overflow-hidden'
+                        : 'h-full w-full mt-0 bg-stone-200'
+                }`}
+            >
+                <div className={`w-full bg-white z-[800] ${isPhone ? 'h-[calc(100%-70px)]' : 'h-full'}`}>
                     {component === 'notes' ? (
-                        <div className="bg-stone-100 h-full w-full rounded-xl text-stone-800 p-6 pt-8 flex flex-col">
+                        <div className="bg-stone-100 h-full w-full text-stone-800 p-6 pt-8 flex flex-col">
                             <div className="text-md font-bold">Leave your notes here...</div>
                             <textarea
                                 value={notes}
@@ -37,18 +41,18 @@ export default function DesktopApp({ component, setComponent, isPhone }) {
                             />
                         </div>
                     ) : component === 'beli' ? (
-                        <div className="w-full h-full rounded-xl overflow-hidden">
+                        <div className="w-full h-full overflow-hidden ">
                             <iframe
                                 src="https://beliapp.co/app/asyf16"
-                                className="w-full h-full border-none"
+                                className={`w-full border-none bg-white h-full`}
                                 title="Beli Website"
                             />
                         </div>
                     ) : component === 'instagram' ? (
-                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                        <div className="relative w-full h-full flex justify-center items-center overflow-hidden">
                             <iframe
                                 src="https://widget.tagembed.com/2165317"
-                                className="w-[95%] h-full border-none"
+                                className={`w-[95%] border-none bg-white h-full`}
                                 title="Nailart Instagram"
                             ></iframe>
                         </div>
@@ -66,7 +70,27 @@ export default function DesktopApp({ component, setComponent, isPhone }) {
                         </div>
                     ) : null}
                 </div>
+
+                {!isPhone && (
+                    <button
+                        className="z-[999] absolute top-2 left-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center"
+                        onClick={handleClose}
+                    >
+                        <X />
+                    </button>
+                )}
             </div>
+
+            {isPhone && (
+                <>
+                    <button
+                        className="z-[999] absolute bottom-[12px] bg-stone-500 w-[180px] h-[45px] rounded-xl flex items-center justify-center"
+                        onClick={handleClose}
+                    >
+                        <Undo2 className="w-7 h-7" />
+                    </button>
+                </>
+            )}
         </div>
     );
 }

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import ToolBar from './toolBar';
-import DesktopApp from './desktopApp';
+import App from './app';
 
 export default function Desktop() {
     const [currentApp, setCurrentApp] = useState(null);
@@ -95,11 +95,11 @@ export default function Desktop() {
         { id: 'notes', image: '/images/notes.png', name: 'Notes' },
         { id: 'spotify', image: '/images/spotify.webp', name: 'Spotify' },
         { id: 'beli', image: '/images/beli.jpg', name: 'Beli' },
-        { id: 'home', image: '/images/home.png', name: 'Home', href: "/" },
         { id: 'instagram', image: '/images/insta.jpg', name: 'Instagram' },
         { id: 'camera', image: '/images/cam.png', name: 'Camera' },
         { id: 'art', image: '/images/art.jpg', name: 'Art' },
-        { id: 'mail', image: '/images/mail.png', name: 'Mail' }
+        { id: 'mail', image: '/images/mail.png', name: 'Mail' },
+        { id: 'home', image: '/images/home.png', name: 'Home', href: '/' }
     ];
 
     return (
@@ -156,17 +156,16 @@ export default function Desktop() {
             ))}
 
             <div className="m-2 px-3 py-2 h-auto bg-[#171f2b80] backdrop-blur-md border border-gray-500 rounded-xl flex flex-row gap-3 z-[999]">
-                {appData.map((app) => (
-                    <div key={app.id}>
-                        {app.id !== 'home' && (
-                            <div
-                                onClick={() => setCurrentApp(app.id)}
-                                className="bg-cover rounded-xl w-[50px] h-[50px] hover:scale-130 hover:translate-y-[-20px] transition-all duration-300 ease-in-out"
-                                style={{ backgroundImage: `url(${app.image})` }}
-                            ></div>
-                        )}
-                    </div>
-                ))}
+                {appData
+                    .filter((app) => app.id !== 'home')
+                    .map((app) => (
+                        <div
+                            key={app.id}
+                            onClick={() => setCurrentApp(app.id)}
+                            className="bg-cover rounded-xl w-[50px] h-[50px] hover:scale-130 hover:translate-y-[-20px] transition-all duration-300 ease-in-out"
+                            style={{ backgroundImage: `url(${app.image})` }}
+                        ></div>
+                    ))}
                 <div className="h-[50px] w-0 border-0 border-r-1 border-r-gray-400/80"></div>
                 <a href={'/'}>
                     <div
@@ -175,7 +174,7 @@ export default function Desktop() {
                     ></div>
                 </a>
             </div>
-            {currentApp &&  <DesktopApp component={currentApp} setComponent={setCurrentApp} />}
+            {currentApp && <App component={currentApp} setComponent={setCurrentApp} />}
         </div>
     );
 }

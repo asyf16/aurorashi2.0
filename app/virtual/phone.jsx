@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
-import DesktopApp from './desktopApp';
+import App from './app';
+import TimeWidget from 'components/timeWidget';
+import WeatherWidget from 'components/weatherWidget';
 
 export default function Phone() {
     const [currentApp, setCurrentApp] = useState(null);
@@ -25,13 +27,17 @@ export default function Phone() {
                 src="/images/moon.mp4"
             />
             <div className="flex flex-row w-full gap-6 justify-center items-start px-6 py-8">
-                <div className="w-1/2 bg-white relative rounded-2xl">
+                <div className="w-1/2 bg-white relative rounded-2xl  overflow-hidden">
                     <div className="pb-[100%]"></div>
-                    <div className="absolute inset-0">{/* Content goes here */}</div>
+                    <div className="absolute inset-0">
+                        <WeatherWidget />
+                    </div>
                 </div>
-                <div className="w-1/2 bg-white relative rounded-2xl">
+                <div className="w-1/2 relative rounded-2xl overflow-hidden">
                     <div className="pb-[100%]"></div>
-                    <div className="absolute inset-0">{/* Content goes here */}</div>
+                    <div className="absolute inset-0">
+                        <TimeWidget />
+                    </div>
                 </div>
             </div>
             <div className="flex flex-row w-full px-6 justify-between mb-6">
@@ -75,7 +81,7 @@ export default function Phone() {
                     </a>
                 </div>
             </div>
-            {currentApp &&  <DesktopApp component={currentApp} setComponent={setCurrentApp} />}
+            {currentApp && <App component={currentApp} setComponent={setCurrentApp} isPhone={true} />}
         </div>
     );
 }
