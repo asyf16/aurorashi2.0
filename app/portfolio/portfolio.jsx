@@ -95,10 +95,10 @@ export default function Portfolio() {
 
   return (
     <div
-      className="relative w-screen bg-linear-to-r from-transparent via-[#3a355a73] to-transparent flex items-center justify-center flex-col sm:gap-12 gap-6 py-26"
+      className="relative w-screen bg-linear-to-r from-transparent via-[#3a355a73] to-transparent flex items-center justify-center flex-col sm:gap-6 gap-1 sm:py-26 py-20"
       id="portfolio"
     >
-      <div className="text-center">
+      <div className="text-center mb-8">
         <h2 className="mb-4 sm:text-3xl text-xl">Aurora&apos;s Museum</h2>
         <div className="sm:w-[600px] w-[240px] sm:text-xl text-sm">
           I love experimenting in all types of media such as oil painting, acrylic, sculpture, block printing,

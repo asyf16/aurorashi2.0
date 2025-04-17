@@ -1,24 +1,35 @@
 'use client';
 import { FastForward, SquareArrowDownRight } from 'lucide-react';
 import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
+import { useState, useEffect } from 'react';
 
 export default function Hero() {
+    const [isDesktop, setIsDesktop] = useState(false);
+
     const { RiveComponent } = useRive({
         src: '/images/gifs/space.riv',
         stateMachines: 'State Machine 1',
         autoplay: true,
         artboard: 'Artboard',
         layout: new Layout({
-            fit: Fit.Fill,
+            fit: isDesktop ? Fit.Fill : Fit.FitHeight,
             alignment: Alignment.TopCenter
         })
     });
+
+    useEffect(() => {
+        const checkWidth = () => setIsDesktop(window.innerWidth >= 640);
+        checkWidth(); 
+        window.addEventListener('resize', checkWidth);
+        return () => window.removeEventListener('resize', checkWidth);
+    }, []);
 
     return (
         <>
             <div className="h-screen w-screen bg-[#04020e]">
                 <RiveComponent />
             </div>
+
             <div
                 id="home"
                 className="h-screen w-screen absolute flex flex-col absolute top-0 justify-center items-center text-[#e6e6e6]"
