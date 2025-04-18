@@ -3,6 +3,7 @@ import { useState } from 'react';
 import App from './app';
 import TimeWidget from 'components/timeWidget';
 import WeatherWidget from 'components/weatherWidget';
+import Link from 'next/link';
 
 export default function Phone() {
     const [currentApp, setCurrentApp] = useState(null);
@@ -72,13 +73,13 @@ export default function Phone() {
                         onClick={() => setCurrentApp('camera')}
                         style={{ backgroundImage: `url(/images/cam.png)` }}
                     ></div>
-                    <a href="/">
+                    <Link href="/">
                         <div
                             className="w-[62px] h-[62px] bg-white relative rounded-2xl bg-cover bg-center "
                             onClick={() => setCurrentApp(null)}
                             style={{ backgroundImage: `url(/images/home.png)` }}
                         ></div>
-                    </a>
+                    </Link>
                 </div>
             </div>
             {currentApp && <App component={currentApp} setComponent={setCurrentApp} isPhone={true} />}

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import ToolBar from './toolBar';
 import App from './app';
+import Link from 'next/link';
 
 export default function Desktop() {
     const [currentApp, setCurrentApp] = useState(null);
@@ -167,12 +168,12 @@ export default function Desktop() {
                         ></div>
                     ))}
                 <div className="h-[50px] w-0 border-0 border-r-1 border-r-gray-400/80"></div>
-                <a href={'/'}>
+                <Link href={'/'}>
                     <div
                         className="bg-cover rounded-xl w-[50px] h-[50px] hover:scale-130 hover:translate-y-[-20px] transition-all duration-300 ease-in-out"
                         style={{ backgroundImage: `url(/images/home.png)` }}
                     ></div>
-                </a>
+                </Link>
             </div>
             {currentApp && <App component={currentApp} setComponent={setCurrentApp} />}
         </div>

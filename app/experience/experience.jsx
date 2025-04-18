@@ -62,7 +62,7 @@ export default function Experience() {
                     description={
                         <>
                             Developing admin dashboard and hacker landing page with{' '}
-                            <span className="font-serif font-bold italic">1000+ users</span> for Toronto's largest
+                            <span className="font-serif font-bold italic">1000+ users</span> for Toronto&apos;s largest
                             summer hackathon to mange{' '}
                             <span className="font-serif font-bold italic"> user applications</span> and{' '}
                             <span className="font-serif font-bold italic">event logistics.</span>
@@ -85,7 +85,7 @@ export default function Experience() {
                     location="Waterloo"
                     description={
                         <>
-                            Redesigned core application's cryptographic risk scoring process, enhancing risk assessment
+                            Redesigned core application&apos;s cryptographic risk scoring process, enhancing risk assessment
                             accuracy by <span className="font-serif font-bold italic">80%</span> and increasing speed
                             from <span className="font-serif font-bold italic">40 min to 17 min</span>.
                         </>
