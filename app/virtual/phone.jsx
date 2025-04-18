@@ -19,7 +19,7 @@ export default function Phone() {
     ];
 
     return (
-        <div className="w-screen h-screen overflow-hidden relative flex flex-col">
+        <div className="w-[100%] h-[100%] overflow-hidden relative flex flex-col">
             <video
                 autoPlay
                 loop
