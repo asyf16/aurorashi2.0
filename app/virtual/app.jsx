@@ -3,8 +3,10 @@ import { Undo2, X } from 'lucide-react';
 import { useContext, useEffect } from 'react';
 import { Context } from '../../components/contextProvider';
 import { notesGetLS } from '../../components/contextProvider';
+import MailWidget from 'components/mailWidget';
 
 export default function App({ component, setComponent, isPhone }) {
+
     const { notes, setNotes } = useContext(Context);
     const handleClose = () => {
         if (typeof setComponent === 'function') {
@@ -15,6 +17,7 @@ export default function App({ component, setComponent, isPhone }) {
     useEffect(() => {
         setNotes(notesGetLS);
     }, []);
+
     return (
         <div
             className={`w-screen absolute left-0 flex justify-center ${
@@ -31,7 +34,7 @@ export default function App({ component, setComponent, isPhone }) {
                 <div className={`w-full bg-white z-[800] ${isPhone ? 'h-[calc(100%-70px)]' : 'h-full'}`}>
                     {component === 'notes' ? (
                         <div className="bg-stone-100 h-full w-full text-stone-800 p-6 pt-8 flex flex-col">
-                            <div className="text-md font-bold">Leave your notes here...</div>
+                            <div className="text-md font-bold">Jot down some notes here...</div>
                             <textarea
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value)}
@@ -60,13 +63,17 @@ export default function App({ component, setComponent, isPhone }) {
                         <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
                             camera
                         </div>
-                    ) : component === 'email' ? (
+                    ) : component === 'mail' ? (
                         <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
-                            email
+                           <MailWidget />
                         </div>
                     ) : component === 'art' ? (
                         <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
                             art
+                        </div>
+                    ) : component === 'spotify' ? (
+                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                            spotify
                         </div>
                     ) : null}
                 </div>

@@ -21,7 +21,7 @@ export default function TimeWidget() {
         <h2 className="text-sm leading-3 font-semibold text-white opacity-90">{greeting}</h2>
       </div>
       
-      <div className="text-3xl font-bold mb-2">{currentTime}</div>
+      <div className="text-[26px] font-bold mb-2">{currentTime}</div>
       
       <div className="text-sm bg-amber-100/40 px-4 py-1 text-white font-bold rounded-full backdrop-blur-sm">
         {currentDate}
