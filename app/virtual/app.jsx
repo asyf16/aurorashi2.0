@@ -3,10 +3,10 @@ import { Undo2, X } from 'lucide-react';
 import { useContext, useEffect } from 'react';
 import { Context } from '../../components/contextProvider';
 import { notesGetLS } from '../../components/contextProvider';
-import MailWidget from 'components/mailWidget';
+import MailWidget from 'components/widgets/mailWidget';
+import ArtWidget from 'components/widgets/artWidget';
 
 export default function App({ component, setComponent, isPhone }) {
-
     const { notes, setNotes } = useContext(Context);
     const handleClose = () => {
         if (typeof setComponent === 'function') {
@@ -31,7 +31,11 @@ export default function App({ component, setComponent, isPhone }) {
                         : 'h-full w-full mt-0 bg-stone-200'
                 }`}
             >
-                <div className={`w-full bg-white z-[800] ${isPhone ? 'h-[calc(100%-70px)]' : 'h-full'}`}>
+                <div
+                    className={`w-full bg-white z-[800] ${
+                        isPhone ? 'h-[calc(100%-70px)] absolute left-0 top-[70px]' : 'h-full'
+                    }`}
+                >
                     {component === 'notes' ? (
                         <div className="bg-stone-100 h-full w-full text-stone-800 p-6 pt-8 flex flex-col">
                             <div className="text-md font-bold">Jot down some notes here...</div>
@@ -65,15 +69,21 @@ export default function App({ component, setComponent, isPhone }) {
                         </div>
                     ) : component === 'mail' ? (
                         <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
-                           <MailWidget />
+                            <MailWidget />
                         </div>
                     ) : component === 'art' ? (
                         <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
-                            art
+                            <ArtWidget />
                         </div>
                     ) : component === 'spotify' ? (
-                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
-                            spotify
+                        <div className="w-full h-full flex justify-center items-center overflow-hidden">
+                            <iframe
+                                src="https://open.spotify.com/embed/playlist/2K18WCf7WWdZMX4JL8YhPf?utm_source=oembed"
+                                className={`w-full border-none bg-white h-full`}
+                                title="Spotify Alblum"
+
+                                // allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture;"
+                            ></iframe>
                         </div>
                     ) : null}
                 </div>
@@ -91,7 +101,7 @@ export default function App({ component, setComponent, isPhone }) {
             {isPhone && (
                 <>
                     <button
-                        className="z-[999] absolute bottom-[12px] bg-stone-500 w-[180px] h-[45px] rounded-xl flex items-center justify-center"
+                        className="z-[999] absolute top-[12px] bg-stone-500 w-[180px] h-[45px] rounded-xl flex items-center justify-center"
                         onClick={handleClose}
                     >
                         <Undo2 className="w-7 h-7" />

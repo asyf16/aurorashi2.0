@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import App from './app';
-import TimeWidget from 'components/timeWidget';
-import WeatherWidget from 'components/weatherWidget';
+import TimeWidget from 'components/widgets/timeWidget';
+import WeatherWidget from 'components/widgets/weatherWidget';
 import Link from 'next/link';
 
 export default function Phone() {
@@ -14,8 +14,8 @@ export default function Phone() {
         { id: 'instagram', image: '/images/insta.jpg', name: 'Instagram' },
         { id: 'art', image: '/images/art.jpg', name: 'Art' },
         { id: 'mail', image: '/images/mail.png', name: 'Mail' },
-        { id: 'home', image: '/images/home.png', name: 'Home', href: '/' },
-        { id: 'camera', image: '/images/cam.png', name: 'Camera' }
+        { id: 'camera', image: '/images/cam.png', name: 'Camera' },
+        { id: 'home', image: '/images/home.png', name: 'Home', href: '/' }
     ];
 
     return (
@@ -53,7 +53,7 @@ export default function Phone() {
             </div>
 
             <div className="flex flex-row w-full px-6 justify-between">
-                {appData.slice(4, 6).map((app) => (
+                {appData.slice(4, 7).map((app) => (
                     <div
                         className="w-[62px] h-[62px] bg-white relative rounded-2xl bg-cover bg-center "
                         key={app.id}
@@ -61,26 +61,13 @@ export default function Phone() {
                         style={{ backgroundImage: `url(${app.image})` }}
                     ></div>
                 ))}
-
-                <div className="w-[60px] h-[60px]"></div>
-                <div className="w-[60px] h-[60px]"></div>
-            </div>
-
-            <div className="w-full absolute left-0 bottom-0 px-6 py-6">
-                <div className="w-full bg-[#171f2bbd] backdrop-blur-md flex flex-row justify-center items-center gap-4 rounded-4xl p-3">
+                <Link href="/">
                     <div
                         className="w-[62px] h-[62px] bg-white relative rounded-2xl bg-cover bg-center "
-                        onClick={() => setCurrentApp('camera')}
-                        style={{ backgroundImage: `url(/images/cam.png)` }}
+                        onClick={() => setCurrentApp(null)}
+                        style={{ backgroundImage: `url(/images/home.png)` }}
                     ></div>
-                    <Link href="/">
-                        <div
-                            className="w-[62px] h-[62px] bg-white relative rounded-2xl bg-cover bg-center "
-                            onClick={() => setCurrentApp(null)}
-                            style={{ backgroundImage: `url(/images/home.png)` }}
-                        ></div>
-                    </Link>
-                </div>
+                </Link>
             </div>
             {currentApp && <App component={currentApp} setComponent={setCurrentApp} isPhone={true} />}
         </div>

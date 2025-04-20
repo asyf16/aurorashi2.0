@@ -13,13 +13,13 @@ export default function Hero() {
         artboard: 'Artboard',
         layout: new Layout({
             fit: isDesktop ? Fit.Fill : Fit.FitHeight,
-            alignment: Alignment.TopCenter
+            alignment: isDesktop ? Alignment.TopCenter :  Alignment.TopLeft
         })
     });
 
     useEffect(() => {
         const checkWidth = () => setIsDesktop(window.innerWidth >= 640);
-        checkWidth(); 
+        checkWidth(); // initial check
         window.addEventListener('resize', checkWidth);
         return () => window.removeEventListener('resize', checkWidth);
     }, []);

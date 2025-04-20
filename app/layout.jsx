@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import ContextProvider from '../components/contextProvider';
+import ContextProvider from 'components/contextProvider';
 
 export const metadata = {
     title: {
