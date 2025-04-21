@@ -41,8 +41,8 @@ export default function ArtWidget() {
         contextRef.current = context;
     }, []);
 
-    const startDrawing = ({ nativeEvent }) => {
-        const { offsetX, offsetY } = nativeEvent;
+    const startDrawing = (event) => {
+        const { offsetX, offsetY } = event.touches ? event.touches[0] : event.nativeEvent;
         contextRef.current.beginPath();
         contextRef.current.moveTo(offsetX, offsetY);
         setIsDrawing(true);
@@ -53,10 +53,10 @@ export default function ArtWidget() {
         setIsDrawing(false);
     };
 
-    const draw = ({ nativeEvent }) => {
+    const draw = (event) => {
         if (!isDrawing) return;
 
-        const { offsetX, offsetY } = nativeEvent;
+        const { offsetX, offsetY } = event.touches ? event.touches[0] : event.nativeEvent;
         contextRef.current.lineTo(offsetX, offsetY);
         contextRef.current.stroke();
     };
