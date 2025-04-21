@@ -41,8 +41,8 @@ export default function ArtWidget() {
         contextRef.current = context;
     }, []);
 
-    const startDrawing = (event) => {
-        const { offsetX, offsetY } = event.touches ? event.touches[0] : event.nativeEvent;
+    const startDrawing = ({ nativeEvent }) => {
+        const { offsetX, offsetY } = nativeEvent;
         contextRef.current.beginPath();
         contextRef.current.moveTo(offsetX, offsetY);
         setIsDrawing(true);
@@ -53,12 +53,46 @@ export default function ArtWidget() {
         setIsDrawing(false);
     };
 
-    const draw = (event) => {
+    const draw = ({ nativeEvent }) => {
         if (!isDrawing) return;
 
-        const { offsetX, offsetY } = event.touches ? event.touches[0] : event.nativeEvent;
+        const { offsetX, offsetY } = nativeEvent;
         contextRef.current.lineTo(offsetX, offsetY);
         contextRef.current.stroke();
+    };
+
+
+    const startTouchDrawing = (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const canvas = canvasRef.current;
+        const rect = canvas.getBoundingClientRect();
+        const offsetX = touch.clientX - rect.left;
+        const offsetY = touch.clientY - rect.top;
+        
+        contextRef.current.beginPath();
+        contextRef.current.moveTo(offsetX, offsetY);
+        setIsDrawing(true);
+    };
+
+    const touchDraw = (e) => {
+        e.preventDefault();
+        if (!isDrawing) return;
+        
+        const touch = e.touches[0];
+        const canvas = canvasRef.current;
+        const rect = canvas.getBoundingClientRect();
+        const offsetX = touch.clientX - rect.left;
+        const offsetY = touch.clientY - rect.top;
+        
+        contextRef.current.lineTo(offsetX, offsetY);
+        contextRef.current.stroke();
+    };
+
+    const finishTouchDrawing = (e) => {
+        e.preventDefault();
+        contextRef.current.closePath();
+        setIsDrawing(false);
     };
 
     const changeColor = (newColor) => {
@@ -151,6 +185,10 @@ export default function ArtWidget() {
                     onMouseUp={finishDrawing}
                     onMouseMove={draw}
                     onMouseLeave={finishDrawing}
+
+                    onTouchStart={startTouchDrawing}
+                    onTouchMove={touchDraw}
+                    onTouchEnd={finishTouchDrawing}
                     className="w-full h-full cursor-crosshair bg-white"
                 />
             </div>
