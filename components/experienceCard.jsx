@@ -5,9 +5,9 @@ export function ExperienceCard({ company, role, location, description, images })
       <div>
         <div className="flex flex-row justify-between sm:mb-4 mb-3 items-center">
           <p className="font-bold text-md md:text-xl">
-            {company} <span className="font-normal italic text-gray-300"> - {role}</span>
+            {company} <span className="font-normal text-gray-300"> - {role}</span>
           </p>
-          <p className="sm:flex hidden text-gray-500 md:text-lg font-bold italic">{location}</p>
+          <p className="sm:flex hidden text-gray-500 md:text-lg font-semibold">{location}</p>
         </div>
         <p className="sm:mb-8 mb-4 text-xs md:text-[16px]">{description}</p>
   
