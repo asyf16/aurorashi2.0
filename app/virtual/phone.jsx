@@ -21,9 +21,11 @@ export default function Phone() {
     return (
         <div className="w-[100%] h-[100%] overflow-hidden relative flex flex-col">
             <video
-                autoPlay
-                loop
-                muted
+                autoPlay="autoplay"
+                playsInline="playsinline"
+                loop={true}
+                muted={true}
+                controls={false}
                 className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
                 src="/images/moon.mp4"
             />
