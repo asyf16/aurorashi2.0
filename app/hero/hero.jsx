@@ -52,9 +52,9 @@ export default function Hero() {
                 <div className="font-serif italic sm:text-[20px] text-[14px] mt-6">Software Engineering Student</div>
                 <div className="font-serif italic sm:text-[20px] text-[14px]">University of Waterloo</div>
                 <a href="/virtual">
-                    <div className={`absolute ${isDesktop ? "bottom-6" : "top-16"} right-6 flex flex-col justify-center items-center hover:text-[#d1c8ffff]`}>
+                    <div className={`absolute sm:top-[calc(100%-105px)] top-16 right-6 flex flex-col justify-center items-center hover:text-[#d1c8ffff]`}>
                         <SquareArrowDownRight className="sm:w-[75px] sm:h-[75px] h-[55px] w-[55px] animate-wiggle stroke-1" />
-                        <div className="sm:text-md text-xs">Click me!</div>
+                        <div className="sm:text-[18px] text-xs">Click me!</div>
                     </div>
                 </a>
             </div>
