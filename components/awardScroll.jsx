@@ -1,5 +1,5 @@
 'use client';
-import AwardCard from './awardCard';
+import { InfiniteMovingCards } from './movingCards';
 
 export default function AwardScroll() {
     const AWARDS = [
@@ -58,11 +58,11 @@ export default function AwardScroll() {
 
     return (
         <div className="sm:mt-22 sm:mb-26 mt-16 mb-20" id="award">
-            <div className="sm:mx-18 mx-8">
+            <div className="sm:mx-18 mx-8 mb-2">
                 <h2>Awards</h2>
                 <p>The awards I have received over the past few years showcase both my passions and skills.</p>
             </div>
-            <div className="overflow-x-hidden mt-6 relative mx-4">
+            {/* <div className="overflow-x-hidden mt-6 relative mx-4">
                 <div className="award-scroll-container flex gap-8 animate-scroll">
                     {AWARDS.concat(AWARDS).map(([title, year, description, image], index) => (
                         <AwardCard key={index} image={image} title={title} description={description} year={year} />
@@ -70,6 +70,10 @@ export default function AwardScroll() {
                 </div>
                 <div className="absolute left-0 top-0 sm:w-[130px] w-[80px] sm:h-[150px] h-[130px] bg-linear-to-r from-[#04020e] to-transparent"></div>
                 <div className="absolute right-0 top-0 sm:w-[130px] w-[80px] sm:h-[150px] h-[130px] bg-linear-to-r from-transparent to-[#04020e]"></div>
+            </div> */}
+
+            <div className="flex flex-col antialiased items-center justify-center relative overflow-hidden">
+                <InfiniteMovingCards items={AWARDS} />
             </div>
         </div>
     );

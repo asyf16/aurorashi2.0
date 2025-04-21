@@ -73,7 +73,7 @@ export default function Navbar() {
                         </div>
                     </a>
 
-                    <a href="#about">
+                    <a href="/virtual">
                         <div className="hover:text-[#d1c8ffff] hover:italic cursor-pointer">
                             <span className="font-serif italic font-bold">6.</span> Click
                         </div>

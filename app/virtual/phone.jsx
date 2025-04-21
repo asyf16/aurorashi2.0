@@ -15,6 +15,8 @@ export default function Phone() {
         { id: 'art', image: '/images/art.jpg', name: 'Art' },
         { id: 'mail', image: '/images/mail.png', name: 'Mail' },
         { id: 'camera', image: '/images/cam.png', name: 'Camera' },
+        // { id: 'game', image: '/images/cam.png', name: 'Game' },
+
         { id: 'home', image: '/images/home.png', name: 'Home', href: '/' }
     ];
 
@@ -54,7 +56,7 @@ export default function Phone() {
                 ))}
             </div>
 
-            <div className="flex flex-row w-full px-6 justify-between">
+            <div className="flex flex-row w-full px-6 justify-between mb-6">
                 {appData.slice(4, 7).map((app) => (
                     <div
                         className="w-[62px] h-[62px] bg-white relative rounded-2xl bg-cover bg-center "
@@ -71,6 +73,7 @@ export default function Phone() {
                     ></div>
                 </Link>
             </div>
+
             {currentApp && <App component={currentApp} setComponent={setCurrentApp} isPhone={true} />}
         </div>
     );

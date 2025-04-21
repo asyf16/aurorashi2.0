@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AwardCard({ image, title, year, description }) {
     return (
-        <div className="flex items-center justify-between bg-[#5a507e] rounded-2xl shadow-md sm:h-[150px] h-[130px]
+        <div className="flex border border-[#5a507e50] overflow-hidden items-center justify-between bg-[#5a507e] rounded-2xl sm:h-[150px] h-[130px]
 ">
             <div className="w-[100px] sm:w-[120px] h-full relative">
                 <Image src={image} alt="Award Picture" layout="fill" objectFit="cover" className="rounded-tl-2xl rounded-bl-2xl" />

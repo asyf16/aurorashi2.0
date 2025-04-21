@@ -100,6 +100,7 @@ export default function Desktop() {
         { id: 'camera', image: '/images/cam.png', name: 'Camera' },
         { id: 'art', image: '/images/art.jpg', name: 'Art' },
         { id: 'mail', image: '/images/mail.png', name: 'Mail' },
+        // { id: 'game', image: '/images/mail.png', name: 'Game' },
         { id: 'home', image: '/images/home.png', name: 'Home', href: '/' }
     ];
 

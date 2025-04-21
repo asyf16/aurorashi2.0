@@ -66,7 +66,7 @@ export default function Footer() {
                     alt="Footer Image"
                     width={200}
                     height={100}
-                    className="w-auto sm:h-[130%] h-[80%] absolute bottom-0 right-0"
+                    className="w-auto sm:h-[130%] h-[90%] absolute bottom-0 right-0"
                 />
             </div>
             <hr className="mb-2 border-t-1 border-gray-700" />
