@@ -40,7 +40,7 @@ export default function App({ component, setComponent, isPhone }) {
                 >
                     {component === 'notes' ? (
                         <div className="bg-stone-100 h-full w-full text-stone-800 p-6 pt-8 flex flex-col">
-                            <div className="text-2xl font-serif italic font-bold">Aurora's Notepad</div>
+                            <div className="text-2xl font-serif italic font-bold">Aurora&apos;s Notepad</div>
                             <div className="flex flex-row justify-between text-gray-400 ">
                                 <div className="text-xl mb-2">Jot down some notes here...</div>
                                 {!copied ? (

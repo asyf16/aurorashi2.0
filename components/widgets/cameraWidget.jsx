@@ -96,7 +96,7 @@ export default function CameraWidget({ closeCamera }) {
 
             <div className="absolute top-4 z-10">
                 <div className="text-center font-serif italic font-bold mb-2 text-xl sm:text-2xl ">
-                <span className="bg-black/20 px-4 rounded-full">Aurora's Photobooth</span></div>
+                <span className="bg-black/20 px-4 rounded-full">Aurora&apos;s Photobooth</span></div>
                 <div className="flex gap-2 bg-black/50 p-2 rounded-xl flex-wrap max-w-[90vw] justify-center">
                     {['none', 'sepia', 'grayscale', 'saturate', 'blueTint'].map((f) => (
                         <button

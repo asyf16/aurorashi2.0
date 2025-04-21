@@ -91,7 +91,7 @@ export default function ArtWidget() {
             <div className="flex sm:flex-row flex-col sm:gap-6 gap-2 items-center justify-between mb-3">
                 <h1 className="font-serif italic text-3xl font-bold text-indigo-800 flex items-center">
                     <Palette className="mr-2 w-8 h-8" />
-                    Aurora's Artpad
+                    Aurora&apos;s Artpad
                 </h1>
                 <div className="flex gap-2">
                     <button
