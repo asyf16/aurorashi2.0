@@ -4,7 +4,8 @@ import Head from 'next/head';
 
 export const metadata = {
     title: {
-        default: `Aurora's Portfolio`
+        default: `Aurora's Portfolio`,
+        description: `Aurora's Portfolio, created with love`,
     }
 };
 
