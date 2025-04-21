@@ -36,6 +36,8 @@ export default function ArtWidget() {
         context.lineJoin = 'round';
         context.lineWidth = brushSize;
         context.strokeStyle = color;
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, canvas.width, canvas.height);
         contextRef.current = context;
     }, []);
 
@@ -87,7 +89,7 @@ export default function ArtWidget() {
     return (
         <div className="flex flex-col items-center p-6 mx-auto bg-linear-to-b from-indigo-50 to-indigo-100 w-full h-full">
             <div className="flex sm:flex-row flex-col sm:gap-6 gap-2 items-center justify-between mb-3">
-                <h1 className="text-3xl font-bold text-indigo-800 flex items-center">
+                <h1 className="font-serif italic text-3xl font-bold text-indigo-800 flex items-center">
                     <Palette className="mr-2 w-8 h-8" />
                     Aurora's Artpad
                 </h1>
@@ -149,7 +151,7 @@ export default function ArtWidget() {
                     onMouseUp={finishDrawing}
                     onMouseMove={draw}
                     onMouseLeave={finishDrawing}
-                    className="w-full h-full cursor-crosshair"
+                    className="w-full h-full cursor-crosshair bg-white"
                 />
             </div>
 

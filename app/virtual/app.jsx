@@ -1,13 +1,15 @@
 'use client';
-import { Undo2, X } from 'lucide-react';
-import { useContext, useEffect } from 'react';
+import { Undo2, X, Clipboard, ClipboardCheck } from 'lucide-react';
+import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../components/contextProvider';
 import { notesGetLS } from '../../components/contextProvider';
 import MailWidget from 'components/widgets/mailWidget';
 import ArtWidget from 'components/widgets/artWidget';
+import CameraWidget from 'components/widgets/cameraWidget';
 
 export default function App({ component, setComponent, isPhone }) {
     const { notes, setNotes } = useContext(Context);
+    const [copied, setCopied] = useState(false);
     const handleClose = () => {
         if (typeof setComponent === 'function') {
             setComponent(null);
@@ -38,7 +40,22 @@ export default function App({ component, setComponent, isPhone }) {
                 >
                     {component === 'notes' ? (
                         <div className="bg-stone-100 h-full w-full text-stone-800 p-6 pt-8 flex flex-col">
-                            <div className="text-md font-bold">Jot down some notes here...</div>
+                            <div className="text-2xl font-serif italic font-bold">Aurora's Notepad</div>
+                            <div className="flex flex-row justify-between text-gray-400 ">
+                                <div className="text-xl mb-2">Jot down some notes here...</div>
+                                {!copied ? (
+                                    <Clipboard
+                                        className="hover:text-gray-800"
+                                        onClick={() => {
+                                            navigator.clipboard.writeText(notes);
+                                            setCopied(true);
+                                            setTimeout(() => setCopied(false), 2000);
+                                        }}
+                                    />
+                                ) : (
+                                    <ClipboardCheck className="text-green-600" />
+                                )}
+                            </div>
                             <textarea
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value)}
@@ -64,15 +81,15 @@ export default function App({ component, setComponent, isPhone }) {
                             ></iframe>
                         </div>
                     ) : component === 'camera' ? (
-                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
-                            camera
+                        <div className="w-full h-full flex justify-center items-center overflow-hidden">
+                            <CameraWidget closeCamera={component !== 'camera'} />
                         </div>
                     ) : component === 'mail' ? (
-                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                        <div className="w-full h-full flex justify-center items-center  overflow-hidden">
                             <MailWidget />
                         </div>
                     ) : component === 'art' ? (
-                        <div className="w-full h-full flex justify-center items-center rounded-xl overflow-hidden">
+                        <div className="w-full h-full flex justify-center items-center overflow-hidden">
                             <ArtWidget />
                         </div>
                     ) : component === 'spotify' ? (

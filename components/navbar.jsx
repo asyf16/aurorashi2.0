@@ -1,6 +1,7 @@
 'use client';
 import { Volume2, VolumeOff, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Sound from './audio';
 
 export default function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -41,12 +42,7 @@ export default function Navbar() {
                 ) : (
                     <Menu className="sm:hidden flex w-6 h-6" onClick={() => setOpenMenu(!openMenu)} />
                 )}
-                <div
-                    className="hover:text-[#d1c8ffff] border border-[#e6e6e6] hover:border-[#d1c8ffff] rounded-lg p-1 cursor-pointer"
-                    onClick={() => setVolume(!volume)}
-                >
-                    {volume ? <Volume2 className="w-4 h-4" /> : <VolumeOff className="w-4 h-4" />}
-                </div>
+                <Sound />
             </div>
             {openMenu && (
                 <div className="flex flex-col border border-[#292442] sm:hidden fixed top-[70px] right-[10px] rounded-lg backdrop-blur-md text-[#e6e6e6] bg-[#1a1536cc] shadow-lg px-6 py-2 gap-2 text-lg">

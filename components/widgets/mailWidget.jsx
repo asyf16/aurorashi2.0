@@ -57,7 +57,7 @@ export default function MailWidget() {
         <div className="w-full h-full p-8">
             <div className="flex items-center mb-6">
                 <Mail className="h-6 w-6 text-[#5778d4] mr-2" />
-                <h3 className="font-textreg font-bold sm:text-xl text-lg text-gray-700">Send a Message</h3>
+                <h3 className=" font-bold sm:text-2xl text-xl text-gray-700 font-serif italic">Send a Message</h3>
             </div>
 
             <div className="mb-4 text-sm bg-gray-100 p-3 border-gray-300 border rounded flex items-center">
