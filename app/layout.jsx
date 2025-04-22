@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import ContextProvider from 'components/contextProvider';
 import Head from 'next/head';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
     title: {
@@ -14,24 +15,13 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <head>
                 <link rel="icon" href="/favicon.svg" sizes="any" />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q74TEFFYS2"></script>
-                <Head>
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q74TEFFYS2"></script>
-                    <script>
-                        {`
-                          window.dataLayer = window.dataLayer || [];
-                          function gtag(){dataLayer.push(arguments);}
-                          gtag('js', new Date());
-                          gtag('config', 'G-Q74TEFFYS2');
-                        `}
-                    </script>
-                </Head>
             </head>
             <body className="antialiased bg-[#04020e]">
                 <ContextProvider>
                     <main>{children}</main>
                 </ContextProvider>
             </body>
+            <GoogleAnalytics gaId="G-Q74TEFFYS2" />
         </html>
     );
 }
