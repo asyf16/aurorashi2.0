@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import ContextProvider from 'components/contextProvider';
-import Head from 'next/head';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
