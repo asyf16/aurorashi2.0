@@ -95,7 +95,7 @@ export default function Portfolio() {
 
   return (
     <div
-      className="relative w-screen bg-linear-to-r from-transparent via-[#3a355a73] to-transparent flex items-center justify-center flex-col sm:gap-6 gap-1 sm:py-26 py-20"
+      className="relative w-[100%] bg-linear-to-r from-transparent via-[#3a355a73] to-transparent flex items-center justify-center flex-col sm:gap-6 gap-1 sm:py-26 py-20"
       id="portfolio"
     >
       <div className="text-center mb-8">

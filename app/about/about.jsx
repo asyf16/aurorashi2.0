@@ -4,7 +4,7 @@ import { Instagram, Linkedin, Github, Mail, Beef } from 'lucide-react';
 
 export default function About() {
     return (
-        <div className="w-screen h-[100vh] bg-[#04020e] flex items-center justify-center" id="about">
+        <div className="w-[100%] h-[100vh] bg-[#04020e] flex items-center justify-center" id="about">
             <div className="mx-16 max-w-[1100px] flex md:flex-row sm:flex-col flex-col items-center justify-center sm:gap-16 gap-2">
                 <Image
                     src="/images/Portrait.webp"

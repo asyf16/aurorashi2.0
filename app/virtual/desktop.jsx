@@ -107,7 +107,7 @@ export default function Desktop() {
     return (
         <div
             ref={containerRef}
-            className="w-screen h-screen overflow-hidden relative flex justify-center items-end"
+            className="w-[100%] h-screen overflow-hidden relative flex justify-center items-end"
             onDragOver={handleDragOver}
         >
             <video

@@ -27,7 +27,7 @@ export default function Virtual() {
 
     if (screenDimensions.width === 0) {
         return (
-            <div className="w-screen h-screen flex px-4 items-center justify-center bg-[#f9f9f9] dark:bg-[#151515]">
+            <div className="w-[100%] h-screen flex px-4 items-center justify-center bg-[#f9f9f9] dark:bg-[#151515]">
                 <div className="flex items-center space-x-1 text-xl font-semibold">
                     <span>Loading Aurora&apos;s Device</span>
                     <span className="animate-bounce">.</span>
@@ -37,5 +37,5 @@ export default function Virtual() {
             </div>
         );
     }
-    return <div className="w-screen h-screen">{screenDimensions.width >= 520 ? <Desktop /> : <Phone />}</div>;
+    return <div className="w-[100%] h-screen">{screenDimensions.width >= 520 ? <Desktop /> : <Phone />}</div>;
 }

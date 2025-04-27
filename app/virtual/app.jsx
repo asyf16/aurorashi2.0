@@ -22,7 +22,7 @@ export default function App({ component, setComponent, isPhone }) {
 
     return (
         <div
-            className={`w-screen absolute left-0 flex justify-center ${
+            className={`w-[100%] absolute left-0 flex justify-center ${
                 !isPhone ? 'h-[calc(100vh-35px)] top-[35px]' : 'h-screen top-0'
             }`}
         >

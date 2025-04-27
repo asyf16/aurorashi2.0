@@ -5,7 +5,7 @@ export default function ToolBar() {
     const {currentTime, currentDate} = useTime()
 
     return (
-            <div className="w-screen h-[35px] absolute top-0 left-0 bg-[#171f2bB3] backdrop-blur-md flex justify-between items-center px-2 text-white text-sm">
+            <div className="w-[100%] h-[35px] absolute top-0 left-0 bg-[#171f2bB3] backdrop-blur-md flex justify-between items-center px-2 text-white text-sm">
                 <div className="flex items-center space-x-3 ml-2">
                     <AppleIcon className="w-4 h-4" />
                     <div className="font-bold">Finder</div>
