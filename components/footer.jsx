@@ -43,7 +43,7 @@ export default function Footer() {
                     <a href="#portfolio">
                         <p className="hover:italic hover:text-[#d1c8ffff]   text-gray-400 sm:text-lg text-xs">5. Portfolio</p>
                     </a>
-                    <a href="#portfolio">
+                    <a href="/virtual">
                         <p className="hover:italic hover:text-[#d1c8ffff]   text-gray-400 sm:text-lg text-xs">6. Click</p>
                     </a>
                 </div>
