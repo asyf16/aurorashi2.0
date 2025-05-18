@@ -1,9 +1,9 @@
 'use client';
-import ProjectCard from "../../components/projectCard";
+import ProjectCard from '../../components/projectCard';
 
 export default function Projects() {
     return (
-        <div className="w-[100%] bg-[#04020e] flex flex-col items-center justify-center mb-16" >
+        <div className="w-[100%] bg-[#04020e] flex flex-col items-center justify-center mb-16">
             <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
                     <ProjectCard
@@ -40,6 +40,20 @@ export default function Projects() {
             <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
                     <ProjectCard
+                        year="2025"
+                        title="Askii"
+                        description={
+                            'Interview practice platform designed to simulate real-world interview scenarios. Helps users prepare for job interviews by generating personalized questions, recording their responses, and providing transcriptions for review. '
+                        }
+                        image="/Images/gifs/askii.gif"
+                        technologies={['Gemini', 'Google Cloud', 'Deepgram', 'Auth0', 'Typescript', 'PostgreSQL', 'Prisma']}
+                        link="https://github.com/asyf16/Askii"
+                        github="https://github.com/asyf16/Askii"
+                        color="#6d3fd1"
+                    />
+                </div>
+                <div className="sm:w-1/2 w-full">
+                <ProjectCard
                         year="2024"
                         title="Intellibin"
                         description={
@@ -53,13 +67,16 @@ export default function Projects() {
                         color="#6d3fd1"
                     />
                 </div>
+            </div>
+
+            <div className="sm:block hidden">✧ ✦ ✧ ✦ ✧</div>
+
+            <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
-                    <ProjectCard
+                <ProjectCard
                         year="2024"
                         title="EyeDentify"
-                        description={
-                            `Made using Python's face recognition library, EyeDentify is a Raspberry Pi powered headset that allows you to see the world from your normal point of view, but inlaid with real-time facial recognition!`
-                        }
+                        description={`Made using Python's face recognition library, EyeDentify is a Raspberry Pi powered headset that allows you to see the world from your normal point of view, but inlaid with real-time facial recognition!`}
                         image="/images/gifs/EyeDentify.gif"
                         technologies={['MongoDB', 'AWS', 'OpenCV', 'Python', 'React', 'Raspberry Pi']}
                         link="https://github.com/asyf16/eyeDentify"
@@ -67,11 +84,6 @@ export default function Projects() {
                         website="https://www.youtube.com/watch?v=KergMVdy5mk"
                     />
                 </div>
-            </div>
-
-            <div className="sm:block hidden">✧ ✦ ✧ ✦ ✧</div>
-
-            <div className="flex sm:flex-row flex-col px-8 py-4 sm:py-8 gap-8">
                 <div className="sm:w-1/2 w-full">
                     <ProjectCard
                         year="2025"
@@ -84,20 +96,6 @@ export default function Projects() {
                         link="https://www.youtube.com/watch?v=YQx1uoPEPR8"
                         github="https://github.com/asyf16/calTrack"
                         website="https://www.youtube.com/watch?v=YQx1uoPEPR8"
-                    />
-                </div>
-                <div className="sm:w-1/2 w-full">
-                    <ProjectCard
-                        year="2025"
-                        title="EPSB Awards Calculator"
-                        description={
-                            `Increased the administration's efficiency by 240%, allowing instant calculation of every student's average based on specific requirements by simply uploading a spreadsheet of the student data.`
-                        }
-                        image="/images/gifs/Calc.gif"
-                        technologies={['Python', 'Tkinter', 'Pandas']}
-                        link="https://github.com/asyf16/Average-Calculator"
-                        github="https://github.com/asyf16/Average-Calculator"
-                        color="#c9a734"
                     />
                 </div>
             </div>
