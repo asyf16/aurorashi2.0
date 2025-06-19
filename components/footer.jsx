@@ -56,9 +56,6 @@ export default function Footer() {
                     <a href="https://www.ishaand.com/" target="_blank" rel="noopener noreferrer">
                         <p className="hover:italic hover:text-[#d1c8ffff] text-gray-400 sm:text-lg text-xs">2. Ishaan Dey</p>
                     </a>
-                    <a href="https://brainrot.fandom.com/wiki/Trippi_Troppi" target="_blank" rel="noopener noreferrer">
-                        <p className="hover:italic hover:text-[#d1c8ffff] text-gray-400 sm:text-lg text-xs">3. Trippi Troppi</p>
-                    </a>
                 </div>
 
                 <Image
