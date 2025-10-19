@@ -3,6 +3,29 @@ import { ExperienceCard } from 'components/experienceCard';
 
 export default function Experience() {
     const data = [
+                {
+            title: '2025',
+            subtitle: 'Sep - Dec',
+            content: (
+                <ExperienceCard
+                    company="Bloomberg LP"
+                    role="Software Engineer"
+                    location="New York"
+                    description={
+                        <>
+                            Engineering a <span className="font-serif font-bold italic">data-exploration</span> platform
+                            with <span className="font-serif font-bold italic">Apache Spark, Iceberg, Amazon S3, and Trino</span>, 
+                            allowing clients to perform complex SQL queries over <span className="font-serif font-bold italic">80Tb+ </span>
+                            of time-series data.
+                        </>
+                    }
+                    images={[
+                        { src: '/images/trino.png', alt: 'Software logos' },
+                        { src: '/images/bloombergfancy.webp', alt: 'Bloomberg' }
+                    ]}
+                />
+            )
+        },
         {
             title: '2025',
             subtitle: 'Jan - May',
@@ -28,8 +51,8 @@ export default function Experience() {
             )
         },
         {
-            title: '2025',
-            subtitle: 'Present',
+            title: '2024-25',
+            subtitle: 'Aug-Aug',
             content: (
                 <ExperienceCard
                     company="WatStreet"
@@ -52,8 +75,8 @@ export default function Experience() {
             
         },
         {
-            title: '2025',
-            subtitle: 'Present',
+            title: '2024-25',
+            subtitle: 'Nov - Aug',
             content: (
                 <ExperienceCard
                     company="Hack the 6ix"
