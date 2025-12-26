@@ -11,7 +11,7 @@
     "dependencies": {
         "@emailjs/browser": "^4.4.1",
         "@netlify/blobs": "^8.1.2",
-        "@next/third-parties": "^15.3.1",
+        "@next/third-parties": "^16.1.1",
         "@rive-app/react-canvas": "^4.18.7",
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
