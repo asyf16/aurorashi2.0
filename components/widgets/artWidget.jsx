@@ -39,6 +39,7 @@ export default function ArtWidget() {
         context.fillStyle = 'white';
         context.fillRect(0, 0, canvas.width, canvas.height);
         contextRef.current = context;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const startDrawing = ({ nativeEvent }) => {

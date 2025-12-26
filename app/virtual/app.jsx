@@ -18,6 +18,7 @@ export default function App({ component, setComponent, isPhone }) {
 
     useEffect(() => {
         setNotes(notesGetLS);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
