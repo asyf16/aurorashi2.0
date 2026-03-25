@@ -10,7 +10,7 @@ export default function ProjectCard({ image, title, year, description, technolog
                     <span className={`absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#04020e_0%,#04020e_50%,#477bc9_100%)]`} />
 
                     <div className="relative w-full h-0 pb-[57%] rounded-xl">
-                        <Image src={image} alt="Project Image" layout="fill" objectFit="cover" className="rounded-xl" />
+                        <Image unoptimized src={image} alt="Project Image" layout="fill" objectFit="cover" className="rounded-xl" />
                     </div>
                 </button>
             </a>

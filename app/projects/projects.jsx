@@ -45,7 +45,7 @@ export default function Projects() {
                         description={
                             'Interview practice platform designed to simulate real-world interview scenarios. Helps users prepare for job interviews by generating personalized questions, recording their responses, and providing transcriptions for review. '
                         }
-                        image="/Images/gifs/askii.gif"
+                        image="/images/gifs/askii.gif"
                         technologies={['Gemini', 'Google Cloud', 'Deepgram', 'Auth0', 'Typescript', 'PostgreSQL', 'Prisma']}
                         link="https://github.com/asyf16/Askii"
                         github="https://github.com/asyf16/Askii"
@@ -59,7 +59,7 @@ export default function Projects() {
                         description={
                             'Smart trashcan with a movable servo arm that automatically sorts your trash from recycling, powered by AI imaging. Second place overall winner at DeltaHacks X.'
                         }
-                        image="/Images/gifs/Bin.gif"
+                        image="/images/gifs/Bin.gif"
                         technologies={['MongoDB', 'Firebase', 'React', 'Python', 'Arduino', 'Google Vision API']}
                         link="https://www.youtube.com/watch?v=fziGIb2MTAk"
                         github="https://github.com/asyf16/Intellibin"
