@@ -3,6 +3,28 @@ import { ExperienceCard } from 'components/experienceCard';
 
 export default function Experience() {
     const data = [
+                        {
+            title: '2026',
+            subtitle: 'May - Aug',
+            content: (
+                <ExperienceCard
+                    company="Rippling"
+                    role="Software Engineer"
+                    location="San Francisco"
+                    description={
+                        <>
+                            Building an <span className="font-serif font-bold italic">Undo Termination</span> feature
+                            with <span className="font-serif font-bold italic">Python, MongoDB, and Typescript</span> 
+                            to restore incorrectly terminated employees, resolving a <span className="font-serif font-bold italic">$5.7M ARR</span> payroll and benefits issue
+                        </>
+                    }
+                    images={[
+                        { src: '/images/rippling1.webp', alt: 'Rippling Logo' },
+                        { src: '/images/rippling2.jpg', alt: 'Rippling Logo' }
+                    ]}
+                />
+            )
+        },
                 {
             title: '2025',
             subtitle: 'Sep - Dec',
@@ -13,7 +35,7 @@ export default function Experience() {
                     location="New York"
                     description={
                         <>
-                            Engineering a <span className="font-serif font-bold italic">data-exploration</span> platform
+                            Engineered a <span className="font-serif font-bold italic">data-exploration</span> platform
                             with <span className="font-serif font-bold italic">Apache Spark, Iceberg, Amazon S3, and Trino</span>, 
                             allowing clients to perform complex SQL queries over <span className="font-serif font-bold italic">80Tb+ </span>
                             of time-series data.
