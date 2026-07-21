@@ -14,8 +14,8 @@ export default function Experience() {
                     description={
                         <>
                             Building an <span className="font-serif font-bold italic">Undo Termination</span> feature
-                            with <span className="font-serif font-bold italic">Python, MongoDB, and Typescript</span> 
-                            to restore incorrectly terminated employees, resolving a <span className="font-serif font-bold italic">$5.7M ARR</span> payroll and benefits issue
+                            with <span className="font-serif font-bold italic">Python, MongoDB, and Typescript </span> 
+                            to restore incorrectly terminated employees, resolving a <span className="font-serif font-bold italic">$5.7M ARR</span> payroll and benefits issue.
                         </>
                     }
                     images={[
