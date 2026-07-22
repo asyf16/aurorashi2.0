@@ -3,7 +3,7 @@ import { ExperienceCard } from 'components/experienceCard';
 
 export default function Experience() {
     const data = [
-                        {
+        {
             title: '2026',
             subtitle: 'May - Aug',
             content: (
@@ -14,7 +14,7 @@ export default function Experience() {
                     description={
                         <>
                             Building an <span className="font-serif font-bold italic">Undo Termination</span> feature
-                            with <span className="font-serif font-bold italic">Python, MongoDB, and Typescript </span> 
+                            with <span className="font-serif font-bold italic">Python, MongoDB, and Typescript </span>
                             to restore incorrectly terminated employees, resolving a <span className="font-serif font-bold italic">$5.7M ARR</span> payroll and benefits issue.
                         </>
                     }
@@ -25,7 +25,7 @@ export default function Experience() {
                 />
             )
         },
-                {
+        {
             title: '2025',
             subtitle: 'Sep - Dec',
             content: (
@@ -36,7 +36,7 @@ export default function Experience() {
                     description={
                         <>
                             Engineered a <span className="font-serif font-bold italic">data-exploration</span> platform
-                            with <span className="font-serif font-bold italic">Apache Spark, Iceberg, Amazon S3, and Trino</span>, 
+                            with <span className="font-serif font-bold italic">Apache Spark, Iceberg, Amazon S3, and Trino</span>,
                             allowing clients to perform complex SQL queries over <span className="font-serif font-bold italic">80Tb+ </span>
                             of time-series data.
                         </>
@@ -94,7 +94,30 @@ export default function Experience() {
                     ]}
                 />
             ),
-            
+
+        },
+        {
+            title: '2025-26',
+            subtitle: 'Present',
+            content: (
+                <ExperienceCard
+                    company="Waterloo Quant Club"
+                    role="VP of Technology"
+                    location="Waterloo"
+                    description={
+                        <>
+                            Helped found the <span className="font-serif font-bold italic">Waterloo Quant Club</span>,
+                            organized Canada's first international trading competition, and developed the
+                            <span className="font-serif font-bold italic">trading infrastructure and games</span> using Rust and TypeScript.
+                        </>
+                    }
+                    images={[
+                        { src: '/images/WQC.jpg', alt: 'WQC Logo' },
+                        { src: '/images/trading_comp.JPG', alt: 'Trading Comp' }
+                    ]}
+                />
+            ),
+
         },
         {
             title: '2024-25',
@@ -139,23 +162,6 @@ export default function Experience() {
                         { src: '/images/advance.jpg', alt: 'ISARA Advance' },
                         { src: '/images/isara.jpg', alt: 'ISARA Logo' }
                     ]}
-                />
-            )
-        },
-        {
-            title: '2024',
-            subtitle: 'Jan - Apr',
-            content: (
-                <ExperienceCard
-                    company="CaseMining"
-                    role="Web Developer"
-                    location="Edmonton"
-                    description={
-                        <>
-                            Developed company website showcasing services, information, and user-friendly contact page
-                            using React, implemented edits tailored to client specifications and feedback.
-                        </>
-                    }
                 />
             )
         }
