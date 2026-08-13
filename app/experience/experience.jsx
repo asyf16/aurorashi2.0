@@ -1,5 +1,43 @@
+import Image from 'next/image';
 import { Timeline } from 'components/Timeline';
 import { ExperienceCard } from 'components/experienceCard';
+
+function OrganizationCard({ organization }) {
+    return (
+        <article className="group relative flex h-full flex-col overflow-hidden rounded-lg bg-linear-to-t from-[#2d2247]/60 via-[#2d2247]/20 to-black transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl hover:shadow-black/20">
+            <a
+                href={organization.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block h-40 overflow-hidden cursor-pointer"
+            >
+                <Image
+                    src={organization.cover.src}
+                    alt={organization.cover.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0714] via-[#0a0714]/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 flex items-end gap-3">
+                    <div className="relative h-11 w-11 overflow-hidden rounded-xl border border-white/15 bg-[#0a0714] shadow-xl">
+                        <Image src={organization.logo.src} alt={organization.logo.alt} fill className="object-cover" />
+                    </div>
+                </div>
+            </a>
+
+            <div className="flex flex-1 flex-col p-5">
+                <h3 className="text-lg font-bold tracking-tight text-[#f2eef8]">{organization.name}</h3>
+                <p className="mt-1 flex flex-wrap items-baseline gap-x-2 font-serif text-sm font-bold italic text-[#d1c8ff]">
+                    <span>{organization.role}</span>
+                    <span className="font-sans text-xs font-bold not-italic text-gray-500">
+                        · {organization.term}
+                    </span>
+                </p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-white">{organization.description}</p>
+            </div>
+        </article>
+    );
+}
 
 export default function Experience() {
     const data = [
@@ -73,77 +111,6 @@ export default function Experience() {
             )
         },
         {
-            title: '2024-25',
-            subtitle: 'Aug-Aug',
-            content: (
-                <ExperienceCard
-                    company="WatStreet"
-                    role="Frontend Developer"
-                    location="Waterloo"
-                    description={
-                        <>
-                            Developed <span className="font-serif font-bold italic">Options Strategy Builder</span> to
-                            create complex strategies for stock profit analysis and
-                            <span className="font-serif font-bold italic">Ledger Dashboard </span> to view holdings and
-                            ledgers.
-                        </>
-                    }
-                    images={[
-                        { src: '/images/ledger.webp', alt: 'Ledger Dashboard' },
-                        { src: '/images/watstreet.webp', alt: 'Watstreet' }
-                    ]}
-                />
-            ),
-
-        },
-        {
-            title: '2025-26',
-            subtitle: 'Present',
-            content: (
-                <ExperienceCard
-                    company="Waterloo Quant Club"
-                    role="VP of Technology"
-                    location="Waterloo"
-                    description={
-                        <>
-                            Helped found the <span className="font-serif font-bold italic">Waterloo Quant Club</span>,
-                            organized Canada's first international trading competition, and developed the
-                            <span className="font-serif font-bold italic">trading infrastructure and games</span> using Rust and TypeScript.
-                        </>
-                    }
-                    images={[
-                        { src: '/images/WQC.jpg', alt: 'WQC Logo' },
-                        { src: '/images/trading_comp.JPG', alt: 'Trading Comp' }
-                    ]}
-                />
-            ),
-
-        },
-        {
-            title: '2024-25',
-            subtitle: 'Nov - Aug',
-            content: (
-                <ExperienceCard
-                    company="Hack the 6ix"
-                    role="Web Developer"
-                    location="Toronto"
-                    description={
-                        <>
-                            Developing admin dashboard and hacker landing page with{' '}
-                            <span className="font-serif font-bold italic">1000+ users</span> for Toronto&apos;s largest
-                            summer hackathon to mange{' '}
-                            <span className="font-serif font-bold italic"> user applications</span> and{' '}
-                            <span className="font-serif font-bold italic">event logistics.</span>
-                        </>
-                    }
-                    images={[
-                        { src: '/images/6ixlogo.jpg', alt: 'Hack the 6ix Logo' },
-                        { src: '/images/6ixpage.jpg', alt: 'Hack the 6ix Website' }
-                    ]}
-                />
-            )
-        },
-        {
             title: '2024',
             subtitle: 'May - Aug',
             content: (
@@ -167,9 +134,66 @@ export default function Experience() {
         }
     ];
 
+    const organizations = [
+        {
+            name: 'Waterloo Quant Club',
+            role: 'VP of Technology',
+            location: 'Waterloo',
+            term: '2025 - Present',
+            link: "https://waterlooquantclub.com/",
+            date: 'Current',
+            description:
+                "Co-founded the club, organized Canada's first international trading competition, and built trading infrastructure and games with Rust and TypeScript.",
+            cover: { src: '/images/trading_comp.JPG', alt: 'Waterloo Quant Club trading competition' },
+            logo: { src: '/images/WQC.jpg', alt: 'Waterloo Quant Club logo' }
+        },
+        {
+            name: 'Hack the 6ix',
+            role: 'Web Developer',
+            location: 'Toronto',
+            link: "https://hackthe6ix.com/",
+            term: '2024 - 2025',
+            date: 'Volunteer',
+            description:
+                "Built the admin dashboard and attendee site for Toronto's largest summer hackathon, supporting 1,000+ users and event logistics.",
+            cover: { src: '/images/6ixpage.jpg', alt: 'Hack the 6ix website' },
+            logo: { src: '/images/6ixlogo.jpg', alt: 'Hack the 6ix logo' }
+        },
+        {
+            name: 'WatStreet',
+            role: 'Frontend Developer',
+            location: 'Waterloo',
+            link: "https://watstreet.netlify.app/",
+            term: '2024 - 2025',
+            date: 'Club',
+            description:
+                'Developed an options strategy builder for stock profit analysis and a ledger dashboard for viewing holdings and transactions.',
+            cover: { src: '/images/ledger.webp', alt: 'WatStreet ledger dashboard' },
+            logo: { src: '/images/watstreet.webp', alt: 'WatStreet logo' }
+        }
+    ];
+
     return (
         <div className="relative w-full overflow-clip bg-linear-to-b from-[#1c192a99] to-[#04020e]" id="experience">
             <Timeline data={data} />
+
+            <section className="bg-black mx-auto max-w-7xl px-6 mt-24 sm:px-16" aria-labelledby="organizations-heading">
+                <div className="mb-8 max-w-4xl sm:mb-10">
+                    <h2 id="organizations-heading">Clubs + Organizations</h2>
+                    <p className="mt-2 text-sm leading-relaxed sm:text-lg">
+                        Outside of internships, I love building with{' '}
+                        <span className="font-serif font-bold italic">student-led communities</span>. These organizations
+                        have given me opportunities to <span className="font-serif font-bold italic">lead teams</span>,
+                        support large events, and turn ambitious ideas into useful products.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-3 mt-8 sm:mt-12">
+                    {organizations.map((organization) => (
+                        <OrganizationCard key={organization.name} organization={organization} />
+                    ))}
+                </div>
+            </section>
         </div>
     );
 }
