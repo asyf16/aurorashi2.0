@@ -11,7 +11,7 @@ Run `npm ci`, then `npm run preview` to build and preview in the Workers runtime
 Run `npm run deploy` to build with OpenNext and deploy to Cloudflare.
 
 The Worker name and `WORKER_SELF_REFERENCE` service in `wrangler.jsonc` must
-both be `aurorashi2-0`, matching the Worker configured in Cloudflare Builds.
+both be `aurorashi-website`, matching the Worker configured in Cloudflare Builds.
 The existing Cloudflare build command (`npm run build`) and deploy command
 (`npx wrangler deploy`) also work: `npm run build` creates the OpenNext bundle
 before Wrangler hands deployment to OpenNext. `npm run build:next` builds only
