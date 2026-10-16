@@ -42,24 +42,13 @@ export const Timeline = ({ data }) => {
                         rel="noopener noreferrer"
                     >
                         <button
-                            className="bg-[#9284d9] mt-4 sm:w-[180px] w-[150px] rounded-4xl px-3 hover:bg-[#d1c8ff] text-[#151226] py-2 font-bold sm:h-[40px] h-[32px] relative overflow-hidden transition-all duration-300 ease-in-out"
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
+                            className="bg-[#9284d9] mt-4 sm:w-[180px] w-[150px] rounded-4xl px-3 hover:bg-[#d1c8ff] text-[#151226] font-bold sm:h-[40px] h-[32px]"
                         >
                             <span
-                                className={`text-sm sm:text-lg absolute sm:inset-y-[6px] inset-y-[5px] sm:w-[180px] w-[150px] left-0 text-center transform transition-transform duration-300 ease-in-out ${
-                                    isHovered ? '-translate-x-full' : 'translate-x-0'
-                                }`}
+                                className={`text-sm sm:text-lg text-center`}
                             >
                                 View my Resume
                             </span>
-                            <div
-                                className={`absolute sm:inset-y-[6px] inset-y-[5px] sm:w-[180px] w-[150px] left-0 flex items-center justify-center transform transition-transform duration-300 ease-in-out ${
-                                    isHovered ? 'translate-x-0' : 'translate-x-full'
-                                }`}
-                            >
-                                <MousePointer className="h-5 w-5 ml-2" />
-                            </div>
                         </button>
                     </a>
                 </div>

@@ -184,7 +184,7 @@ export default function Experience() {
                         Outside of internships, I love building with{' '}
                         <span className="font-serif font-bold italic">student-led communities</span>. These organizations
                         have given me opportunities to <span className="font-serif font-bold italic">lead teams</span>,
-                        support large events, and turn ambitious ideas into useful products.
+                        support <span className="font-serif font-bold italic">large events</span>, and turn ambitious ideas into <span className="font-serif font-bold italic">useful products</span>.
                     </p>
                 </div>
 
